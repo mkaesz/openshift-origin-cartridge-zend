@@ -1,0 +1,9 @@
+@CHARSET "UTF-8";
+
+#jobqueue-general-details.general-details-top table tr td:first-child {
+	width: 175px;
+}
+
+.code-section {
+	line-height: 12px;
+}

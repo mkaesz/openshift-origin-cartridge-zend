@@ -1,0 +1,44 @@
+@CHARSET "UTF-8";
+
+
+.floating-tip {
+    background-color: #fff;
+	border: 1px solid #a3bcc7;
+	word-wrap: break-word;
+    /* padding: 5px 15px; */
+    color: #000;
+	padding: 5px;
+    font-weight: bold;
+    font-size: 11px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+	margin-top: 5px !important;
+}
+
+.floating-tip ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 4px;
+	border-bottom: 1px solid #ecf1f3;
+}
+
+.floating-tip ul li {
+	color: #000000;
+	padding: 7px;
+	width: 120px;
+	white-space: nowrap;
+}
+
+.floating-tip ul li a {
+	color: #000;
+}
+
+.floating-tip ul li:hover {
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+.floating-tip .issue-actions-list {
+	border-bottom: 0px;
+}

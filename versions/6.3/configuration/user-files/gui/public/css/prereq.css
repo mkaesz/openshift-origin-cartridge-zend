@@ -1,0 +1,25 @@
+@CHARSET "UTF-8";
+
+/* Prerequisites list */
+
+ul.prerequisites-list li span{
+	vertical-align: 3px;
+}
+
+ul.prerequisites-list li {
+	list-style-position: outside;
+}
+
+ul.prerequisites-list li.prerequisite-item-valid {
+	list-style-image: url(../images/ok-message-icon.png);
+	color: green;
+}
+
+ul.prerequisites-list li.prerequisite-item-error {
+	list-style-image: url(../images/error-message-icon.png);
+	color: red;
+}
+
+.prerequisites_container .prerequisites-list {
+	padding: 0 30px;
+}

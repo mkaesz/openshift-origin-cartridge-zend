@@ -1,0 +1,32 @@
+---
+locked_files:
+- ~/.pearrc
+- configuration/
+- configuration/etc/
+- configuration/etc/conf.d/
+- configuration/etc/conf.d/openshift.conf
+- configuration/etc/conf.d/zendserver_php.conf
+- configuration/etc/conf.d/zendserver_console.conf*
+- configuration/etc/conf.d/zendserver_engine_vhost.conf*
+- configuration/etc/conf.d/zendserver_gui_vhost.disabled*
+- metadata/
+- metadata/*
+- env/
+- env/*
+- conf/
+- bin/
+- bin/*
+- hooks/
+- hooks/*
+- gui/
+- doc/
+- include/
+- lib/
+- tmp/
+- var/
+- var/log/
+processed_templates:
+- 'env/*.erb'
+- 'versions/6.3/configuration/**/*.erb'
+dependency_dirs:
+- phplib

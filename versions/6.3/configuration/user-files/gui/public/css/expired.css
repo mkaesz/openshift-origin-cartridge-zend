@@ -1,0 +1,298 @@
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'), url(../images/expired/OpenSans.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Oswald Regular'), local('Oswald-Regular'), url(../images/expired/Oswald.woff) format('woff');
+}
+
+body {
+	background: #7d7d7d;
+	font-family: 'Open Sans', sans-serif;
+}
+
+#expired-container {
+	width: 700px;
+	height: 630px;
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: url("../images/expired/bg.png") left top no-repeat;
+	padding: 10px 65px;
+}
+
+#congrats-container {
+	width: 632px;
+	height: 370px;
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: url("../images/expired/bg_congrats.png") left top no-repeat;
+	text-align: center;
+}
+
+#expired-top {
+	margin-top: 100px;
+	text-align: center;
+	height: 132px;
+}
+
+#expired-center {
+	position: relative;
+	clear: both;
+	padding-top: 10px;
+	height: 270px;
+}
+
+#expired-bottom {
+	position: relative;
+	clear: both;	
+	text-align: center;
+	margin-top: 10px;
+	border-top: 1px solid #E6E6E6;
+}
+
+#expired-top h2 {
+	font-family: 'Oswald', sans-serif;
+	font-size: 20px;
+	color: #222;
+	text-transform: uppercase;
+}
+
+#expired-top div {
+	color: #222;
+	clear: both;
+	margin-top: 20px;
+	font-size: 16px;
+}
+
+#expired-center-right {
+	float: right;
+	width: 45%;
+	max-width: 45%;
+}
+
+#expired-center-left {
+	float: left;
+	width: 40%;
+	max-width: 40%;
+}
+
+#expired-center-center {
+	float: left;
+	width: 10%;
+	max-width: 10%;
+	text-align: center;
+}
+
+#expired-center #expired-center-center {
+	font-size: 22px;
+	font-weight: bold;
+	text-align: right;
+}
+
+#expired-center h2 {
+	font-size: 16px;
+	color: #444;
+	height: 43px;
+	border-bottom: 1px solid #E2E2E2;
+}
+
+#expired-center h3 {
+	clear: both;
+	font-size: 14px;
+	color: #444;
+	margin-bottom: 4px;
+}
+
+#expired-center div {
+	font-size: 14px;
+	color: #666;
+	margin-top: 10px;
+	padding: 0;
+}
+
+#expired-center-right {
+	padding: 0 0 0 20px;
+}
+
+#expired-center-right input {
+	padding: 0 5px;
+	float: left;
+	clear: both;
+	width: 220px;
+	height: 30px;
+	line-height: 30px;
+	font-size: 18px;
+	border: 1px solid #aaa;
+	margin: 4px 0 14px 0;
+	font-weight: normal;
+}
+#error_message-pane {
+	position: absolute;
+	right: 32px;
+	top: 7px;
+	color: red;
+}
+
+#expired-center-right input[type="submit"] {
+	width: 72px;
+	height: 26px;
+	display: block;
+	background: url("../images/expired/submit-btn.png") 0 0 no-repeat;
+}
+
+#expired-center-right input[type="submit"].disabled {
+	background-position: 0px -72px !important;
+}
+
+#expired-center-right input[type="submit"].disabled :hover {
+	background-position: 0px -72px !important;
+}
+
+#expired-center-right input[type="submit"]:hover {
+	background-position: 0px -36px;
+}
+
+#expired-center-right input[type="submit"]:active {
+	background-position: 0px -72px;
+}
+
+.renew-button {
+	cursor: pointer;
+	display: inline-block;
+	width: 260px;
+	height: 50px;
+	margin: 0 10px;
+	background-position: 0px 0px;
+}
+
+.renew-button:hover {
+	background-position: 0px -60px;
+}
+
+.renew-button:active {
+	background-position: 0px -120px;
+}
+
+#expired-bottom #free {
+	margin-top: 15px;
+	clear: both;
+	color: #2886ad;
+	font-size: 15px;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+#expired-bottom #free:hover {
+	color: #00aeff;
+}
+
+#logout {
+	text-decoration: none;
+	position: absolute;
+	top: 24px;
+	right: 28px;
+	color: #222;
+}
+
+#logout:hover {
+	text-decoration: none;	
+}
+
+#congrats-container h2 {
+	font-weight: bold;
+	margin-top: 160px;
+	font-size: 22px;
+	margin-bottom: 25px;
+}
+
+#congrats-container div {
+	font-size: 18px;
+	margin-bottom: 7px;
+}
+
+#congrats-container a {
+	font-size: 14px;
+	color: #2986ab;
+}
+
+#expired-center .purchase-btn {
+	background: url("../images/expired/purchase-btn.png") top left no-repeat;
+	text-align: center;
+	color: #fff;
+	width: 194px;
+	height: 42px;
+	line-height: 42px;
+	font-size: 16px;
+	cursor: pointer;
+	position: absolute;
+	bottom: 0;
+}
+
+#expired-center .purchase-btn:hover {
+	background-position: 0px -48px;
+}
+
+#expired-center .purchase-btn:active {
+	background-position: 0px -96px;
+}
+
+#expired-center .purchase-btn#twenty-one-days,
+#expired-center .purchase-btn.multi-lines {
+	padding-top: 2px;
+	font-size: 14px;
+	line-height: 17px;
+}
+
+#expired-bottom h2 {
+	float: left;
+	margin: 8px 0;
+}
+
+#expired-bottom form {
+	clear: both;
+}
+
+#expired-bottom h3 {
+	float: left;
+	font-weight: normal;
+	margin: 8px 10px 0 0;
+}
+
+#expired-bottom input {
+	float: left;
+	margin-right: 15px;
+	height: 20px;
+	width: 170px;
+}
+
+#expired-bottom input[type="submit"] {
+	width: 100px;
+	height: 30px;
+}
+
+#expired-center .commercial-expired {
+	width: 240px;
+	margin: 20px auto;
+	position: relative;
+	height: 110px;
+	text-align: center;
+	font-weight: bold;
+}
+
+#expired-center .commercial-expired .purchase-btn#contact {
+	left: 12px;		
+}
+
+#white-section {
+	height: 363px;
+}

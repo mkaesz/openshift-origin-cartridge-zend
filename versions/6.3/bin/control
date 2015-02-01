@@ -1,0 +1,142 @@
+#!/bin/bash -e
+
+source $OPENSHIFT_CARTRIDGE_SDK_BASH
+
+#ZCE_PREFIX points to the location of th Zend Server binaries and configuration for the cartridge
+export ZCE_PREFIX=${OPENSHIFT_ZEND_DIR}php-5.5
+export HTTPD_CFG_FILE=${OPENSHIFT_ZEND_DIR}configuration/etc/conf/httpd_nolog.conf
+export HTTPD_CFG_DIR=${OPENSHIFT_ZEND_DIR}configuration/etc/conf.d
+export PHPRC=$OPENSHIFT_ZEND_PHPRC
+export LD_LIBRARY_PATH=${ZCE_PREFIX}/lib:${LD_LIBRARY_PATH}
+
+export ZEND_TMPDIR=${ZCE_PREFIX}/tmp
+export TMPDIR=${ZCE_PREFIX}/tmp
+export PRODUCT_NAME="Zend Server"
+export INSTALLATION_UID=1328
+export ZEND_TMPDIR=${ZCE_PREFIX}/tmp
+export PRODUCT_VERSION=6.3.0
+export PHPRC=${ZCE_PREFIX}/etc/php.ini
+export PHP_INI_SCAN_DIR=${ZCE_PREFIX}/etc/conf.d
+export DIST=pe
+export PHP_PEAR_PHP_BIN=${ZCE_PREFIX}/bin/php
+export PHP_PEAR_INSTALL_DIR=${ZCE_PREFIX}/share/pear
+
+function start() {
+    echo "Starting Zend Server Monitor node"
+    # - logs errors and performance data to the Zend Server
+    ${OPENSHIFT_ZEND_DIR}php-5.5/bin/monitor-node.sh start || \
+        client_error "Failed to start Zend Server Monitor node"
+    
+    echo "Starting Apache"
+    /usr/sbin/httpd -C "Include $HTTPD_CFG_DIR/*.conf" -f $HTTPD_CFG_FILE -k start || \
+        client_error "Failed to start Apache"
+
+    echo "Starting Zend Server Console"
+    ${OPENSHIFT_ZEND_DIR}php-5.5/bin/lighttpdctl.sh start || \
+        client_error "Failed to start Zend Server Console"
+
+    echo "Starting Zend Server Deployment daemon"
+    ${OPENSHIFT_ZEND_DIR}php-5.5/bin/zdd.sh start || \
+        client_error "Failed to start Zend Server Deployment daemon"
+
+    echo "Starting Zend Server JobQueue daemon"
+    # - allows PHP applications to execute batch jobs using an api call
+    ${OPENSHIFT_ZEND_DIR}php-5.5/bin/jqd.sh start || \
+        client_error "Failed to start Zend Server JobQueue daemon"
+
+    #ZSD is used by other Zend Server components to communicate with PHP in the apache process
+    echo "Starting Zend Server daemon"
+    ${OPENSHIFT_ZEND_DIR}php-5.5/bin/zsd.sh start  || \
+      client_error "Failed to start Zend Server daemon"
+
+    client_result "Zend Server 6 started successfully"
+}
+
+function stop() {
+    #ZSD Collects php events and is used by other Zend Server components to communicate with PHP in the apache process
+    echo "Stopping Zend Server daemon"
+    ${OPENSHIFT_ZEND_DIR}php-5.5/bin/zsd.sh stop || : 
+
+    echo "Stopping Zend Server JobQueue daemon"
+    ${OPENSHIFT_ZEND_DIR}php-5.5/bin/jqd.sh stop || :
+
+    echo "Stopping Zend Server Deployment daemon"
+    ${OPENSHIFT_ZEND_DIR}php-5.5/bin/zdd.sh stop || :
+
+    echo "Stopping Zend Server Console"
+    ${OPENSHIFT_ZEND_DIR}php-5.5/bin/lighttpdctl.sh stop || :
+
+    echo "Stopping Apache"
+    /usr/sbin/httpd -C "Include $HTTPD_CFG_DIR/*.conf" -f $HTTPD_CFG_FILE -k stop || :
+
+    echo "Stopping Zend Server Monitor node"
+    ${OPENSHIFT_ZEND_DIR}php-5.5/bin/monitor-node.sh stop || :
+
+    client_result "Zend Server 6 stopped successfully"
+}
+
+function restart() {
+   #Call the stop function
+   stop
+   #Call the start function
+   start
+ }
+
+function status() {
+   if output=$(curl http://$OPENSHIFT_ZEND_IP:$OPENSHIFT_ZEND_PORT/server-status?auto 2>&1 )
+   then
+      client_result "Application is running"
+      client_result $output
+      return 0
+   else
+      client_result "Application is either stopped or inaccessible"
+      #FIXME: return 1, once REST API is ready
+      return 0
+   fi
+}
+
+function tidy() {
+    client_message "Emptying log dir: $OPENSHIFT_ZEND_LOG_DIR"
+    shopt -s dotglob
+    rm -rf $OPENSHIFT_ZEND_LOG_DIR/*
+}
+
+function build() {
+    if [ -f ${OPENSHIFT_REPO_DIR}.openshift/markers/force_clean_build ]
+    then
+        echo ".openshift/markers/force_clean_build found!  Recreating pear libs" 1>&2
+        rm -rf ${OPENSHIFT_ZEND_DIR}phplib/pear/*
+        mkdir -p ${OPENSHIFT_ZEND_DIR}phplib/pear/{docs,ext,php,cache,cfg,data,download,temp,tests,www}
+    fi
+
+    if [ -f ${OPENSHIFT_REPO_DIR}deplist.txt ]
+    then
+        for f in $(cat ${OPENSHIFT_REPO_DIR}deplist.txt)
+        do
+            echo "Checking pear: $f"
+            echo
+            if pear -c ${OPENSHIFT_HOMEDIR}.pearrc list "$f" > /dev/null
+            then
+                pear -c ${OPENSHIFT_HOMEDIR}.pearrc upgrade "$f"
+            elif ! ( php -c ${OPENSHIFT_ZEND_DIR}php-5.5/etc -m | grep -i -q \^`basename "$f"`\$ )
+            then
+                pear -c ${OPENSHIFT_HOMEDIR}.pearrc install --alldeps "$f"
+            else
+                echo "Extension already installed in the system: $f"
+            fi
+        done
+    fi
+}
+
+case "$1" in
+  start)     start ;;
+  stop)      stop ;;
+  restart)   restart ;;
+  status)    status ;;
+  reload)    restart ;;
+  tidy)      tidy ;;
+  build)     build ;;
+  *)         exit 0
+esac
+
+unset LD_LIBRARY_PATH

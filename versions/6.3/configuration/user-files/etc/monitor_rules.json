@@ -1,0 +1,475 @@
+[{
+		"app-id":	-1,
+		"rules":	[{
+				"rule-id":	1,
+				"rule-type":	"function-error",
+				"rule-parent-id":	-1,
+				"app-id":	-1,
+				"rule-name":	"Function Error",
+				"enabled":	true,
+				"description":	"Triggered when one of the watched functions returns FALSE",
+				"rule-url":	"",
+				"rule-creator":	0,
+				"severity":	0,
+				"conditions":	[{
+						"condition-id":	1,
+						"operation":	"string-in-list",
+						"attribute":	"function-name",
+						"operand":	"curl_exec|fopen|file_get_contents|file_put_contents|fsockopen|ftp_connect|ftp_ssl_connect|ldap_connect|pcntl_exec|socket_connect|stream_socket_client"
+					}],
+				"actions":	[]
+			}, {
+				"rule-id":	2,
+				"rule-type":	"function-error",
+				"rule-parent-id":	-1,
+				"app-id":	-1,
+				"rule-name":	"Database Error",
+				"enabled":	true,
+				"description":	"Triggered when one of the watched database functions returns FALSE",
+				"rule-url":	"",
+				"rule-creator":	0,
+				"severity":	1,
+				"conditions":	[{
+						"condition-id":	2,
+						"operation":	"string-in-list",
+						"attribute":	"function-name",
+						"operand":	"mssql_connect|mssql_execute|mssql_query|mssql_unbuffered_query|mysql_connect|mysql_db_query|mysql_query|mysql_unbuffered_query|mysqli_connect|mysqli_execute|mysqli_master_query|mysqli_multi_query|mysqli_query|mysqli_real_connect|mysqli_real_query|mysqli_rpl_query_type|mysqli_send_query|mysqli_slave_query|mysqli_stmt_execute|oci_connect|ociexecute|oci_execute|ocilogon|oci_new_connect|odbc_connect|odbc_exec|odbc_execute|ora_exec|PDO::exec|PDO::prepare|PDO::query|pg_connect|pg_exec|pg_query|pg_send_query|sqlite_array_query|sqlite_exec|sqlite_query|sqlite_single_query|sqlite_unbuffered_query|db2_connect|db2_exec|db2_execute|db2_prepare|SQLite3::exec|SQLite3::query|SQLite3::querySingle|SQLite3Stmt::execute|Mongo*"
+					}],
+				"actions":	[]
+			}, {
+				"rule-id":	3,
+				"rule-type":	"function-slow-exec",
+				"rule-parent-id":	-1,
+				"app-id":	-1,
+				"rule-name":	"Slow Function Execution",
+				"enabled":	true,
+				"description":	"Triggered when one of the watched functions runs longer than the specified duration",
+				"rule-url":	"",
+				"rule-creator":	0,
+				"severity":	1,
+				"conditions":	[{
+						"condition-id":	3,
+						"operation":	"string-in-list",
+						"attribute":	"function-name",
+						"operand":	"curl_exec|curl_multi_exec|dom_xpath_query|exec|fopen|file_get_contents|file_put_contents|fsockopen|ftp_connect|ftp_ssl_connect|ldap_connect|pcntl_exec|shell_exec|socket_connect|stream_socket_client|SoapClient::__call|SoapClient::__soapCall"
+					}, {
+						"condition-id":	4,
+						"operation":	"number-greater-than",
+						"attribute":	"exec-time",
+						"operand":	"2000"
+					}],
+				"actions":	[]
+			}, {
+				"rule-id":	3,
+				"rule-type":	"function-slow-exec",
+				"rule-parent-id":	-1,
+				"app-id":	-1,
+				"rule-name":	"Slow Function Execution",
+				"enabled":	true,
+				"description":	"Triggered when one of the watched functions runs longer than the specified duration",
+				"rule-url":	"",
+				"rule-creator":	0,
+				"severity":	0,
+				"conditions":	[{
+						"condition-id":	3,
+						"operation":	"string-in-list",
+						"attribute":	"function-name",
+						"operand":	"curl_exec|curl_multi_exec|dom_xpath_query|exec|fopen|file_get_contents|file_put_contents|fsockopen|ftp_connect|ftp_ssl_connect|ldap_connect|pcntl_exec|shell_exec|socket_connect|stream_socket_client|SoapClient::__call|SoapClient::__soapCall"
+					}, {
+						"condition-id":	5,
+						"operation":	"number-greater-than",
+						"attribute":	"exec-time",
+						"operand":	"1000"
+					}],
+				"actions":	[]
+			}, {
+				"rule-id":	4,
+				"rule-type":	"function-slow-exec",
+				"rule-parent-id":	-1,
+				"app-id":	-1,
+				"rule-name":	"Slow Query Execution",
+				"enabled":	true,
+				"description":	"Triggered when one of the watched database functions runs longer than the specified duration",
+				"rule-url":	"",
+				"rule-creator":	0,
+				"severity":	1,
+				"conditions":	[{
+						"condition-id":	6,
+						"operation":	"string-in-list",
+						"attribute":	"function-name",
+						"operand":	"mssql_execute|mssql_query|mssql_unbuffered_query|mysql_db_query|mysql_query|mysql_unbuffered_query|mysqli_execute|mysqli_master_query|mysqli_multi_query|mysqli_query|mysqli_real_connect|mysqli_real_query|mysqli_send_query|mysqli_slave_query|mysqli_stmt_execute|ociexecute|oci_execute|odbc_exec|odbc_execute|ora_exec|PDO::exec|PDO::query|PDOStatement::fetchAll|pg_exec|pg_query|pg_send_query|sqlite_array_query|sqlite_exec|sqlite_query|sqlite_single_query|sqlite_unbuffered_query|db2_exec|db2_execute|SQLite3::exec|SQLite3::query|SQLite3::querySingle|SQLite3Stmt::execute|Mongo*"
+					}, {
+						"condition-id":	7,
+						"operation":	"number-greater-than",
+						"attribute":	"exec-time",
+						"operand":	"2000"
+					}],
+				"actions":	[]
+			}, {
+				"rule-id":	4,
+				"rule-type":	"function-slow-exec",
+				"rule-parent-id":	-1,
+				"app-id":	-1,
+				"rule-name":	"Slow Query Execution",
+				"enabled":	true,
+				"description":	"Triggered when one of the watched database functions runs longer than the specified duration",
+				"rule-url":	"",
+				"rule-creator":	0,
+				"severity":	0,
+				"conditions":	[{
+						"condition-id":	6,
+						"operation":	"string-in-list",
+						"attribute":	"function-name",
+						"operand":	"mssql_execute|mssql_query|mssql_unbuffered_query|mysql_db_query|mysql_query|mysql_unbuffered_query|mysqli_execute|mysqli_master_query|mysqli_multi_query|mysqli_query|mysqli_real_connect|mysqli_real_query|mysqli_send_query|mysqli_slave_query|mysqli_stmt_execute|ociexecute|oci_execute|odbc_exec|odbc_execute|ora_exec|PDO::exec|PDO::query|PDOStatement::fetchAll|pg_exec|pg_query|pg_send_query|sqlite_array_query|sqlite_exec|sqlite_query|sqlite_single_query|sqlite_unbuffered_query|db2_exec|db2_execute|SQLite3::exec|SQLite3::query|SQLite3::querySingle|SQLite3Stmt::execute|Mongo*"
+					}, {
+						"condition-id":	8,
+						"operation":	"number-greater-than",
+						"attribute":	"exec-time",
+						"operand":	"1000"
+					}],
+				"actions":	[]
+			}, {
+				"rule-id":	5,
+				"rule-type":	"request-slow-exec",
+				"rule-parent-id":	-1,
+				"app-id":	-1,
+				"rule-name":	"Slow Request Execution",
+				"enabled":	true,
+				"description":	"Triggered when a PHP request's runtime is longer than the specified duration",
+				"rule-url":	"",
+				"rule-creator":	0,
+				"severity":	1,
+				"conditions":	[{
+						"condition-id":	9,
+						"operation":	"number-greater-than",
+						"attribute":	"exec-time",
+						"operand":	"5000"
+					}],
+				"actions":	[]
+			}, {
+				"rule-id":	5,
+				"rule-type":	"request-slow-exec",
+				"rule-parent-id":	-1,
+				"app-id":	-1,
+				"rule-name":	"Slow Request Execution",
+				"enabled":	true,
+				"description":	"Triggered when a PHP request's runtime is longer than the specified duration",
+				"rule-url":	"",
+				"rule-creator":	0,
+				"severity":	1,
+				"conditions":	[{
+						"condition-id":	10,
+						"operation":	"number-greater-than",
+						"attribute":	"exec-time-percent-change",
+						"operand":	"60"
+					}],
+				"actions":	[]
+			}, {
+				"rule-id":	5,
+				"rule-type":	"request-slow-exec",
+				"rule-parent-id":	-1,
+				"app-id":	-1,
+				"rule-name":	"Slow Request Execution",
+				"enabled":	true,
+				"description":	"Triggered when a PHP request's runtime is longer than the specified duration",
+				"rule-url":	"",
+				"rule-creator":	0,
+				"severity":	0,
+				"conditions":	[{
+						"condition-id":	11,
+						"operation":	"number-greater-than",
+						"attribute":	"exec-time",
+						"operand":	"2000"
+					}],
+				"actions":	[]
+			}, {
+				"rule-id":	5,
+				"rule-type":	"request-slow-exec",
+				"rule-parent-id":	-1,
+				"app-id":	-1,
+				"rule-name":	"Slow Request Execution",
+				"enabled":	true,
+				"description":	"Triggered when a PHP request's runtime is longer than the specified duration",
+				"rule-url":	"",
+				"rule-creator":	0,
+				"severity":	0,
+				"conditions":	[{
+						"condition-id":	12,
+						"operation":	"number-greater-than",
+						"attribute":	"exec-time-percent-change",
+						"operand":	"30"
+					}],
+				"actions":	[]
+			}, {
+				"rule-id":	5,
+				"rule-type":	"request-slow-exec",
+				"rule-parent-id":	-1,
+				"app-id":	-1,
+				"rule-name":	"Slow Request Execution",
+				"enabled":	true,
+				"description":	"Triggered when a PHP request's runtime is longer than the specified duration",
+				"rule-url":	"",
+				"rule-creator":	0,
+				"severity":	-1,
+				"conditions":	[{
+						"condition-id":	13,
+						"operation":	"number-greater-than",
+						"attribute":	"exec-time-percent-change",
+						"operand":	"15"
+					}],
+				"actions":	[]
+			}, {
+				"rule-id":	6,
+				"rule-type":	"request-large-mem-usage",
+				"rule-parent-id":	-1,
+				"app-id":	-1,
+				"rule-name":	"High Memory Usage",
+				"enabled":	true,
+				"description":	"Triggered when a PHP request consumes more than the specified amount of memory",
+				"rule-url":	"",
+				"rule-creator":	0,
+				"severity":	1,
+				"conditions":	[{
+						"condition-id":	14,
+						"operation":	"number-greater-than",
+						"attribute":	"mem-usage",
+						"operand":	"16384"
+					}],
+				"actions":	[]
+			}, {
+				"rule-id":	6,
+				"rule-type":	"request-large-mem-usage",
+				"rule-parent-id":	-1,
+				"app-id":	-1,
+				"rule-name":	"High Memory Usage",
+				"enabled":	true,
+				"description":	"Triggered when a PHP request consumes more than the specified amount of memory",
+				"rule-url":	"",
+				"rule-creator":	0,
+				"severity":	1,
+				"conditions":	[{
+						"condition-id":	15,
+						"operation":	"number-greater-than",
+						"attribute":	"mem-usage-percent-change",
+						"operand":	"60"
+					}],
+				"actions":	[]
+			}, {
+				"rule-id":	6,
+				"rule-type":	"request-large-mem-usage",
+				"rule-parent-id":	-1,
+				"app-id":	-1,
+				"rule-name":	"High Memory Usage",
+				"enabled":	true,
+				"description":	"Triggered when a PHP request consumes more than the specified amount of memory",
+				"rule-url":	"",
+				"rule-creator":	0,
+				"severity":	0,
+				"conditions":	[{
+						"condition-id":	16,
+						"operation":	"number-greater-than",
+						"attribute":	"mem-usage",
+						"operand":	"8192"
+					}],
+				"actions":	[]
+			}, {
+				"rule-id":	6,
+				"rule-type":	"request-large-mem-usage",
+				"rule-parent-id":	-1,
+				"app-id":	-1,
+				"rule-name":	"High Memory Usage",
+				"enabled":	true,
+				"description":	"Triggered when a PHP request consumes more than the specified amount of memory",
+				"rule-url":	"",
+				"rule-creator":	0,
+				"severity":	0,
+				"conditions":	[{
+						"condition-id":	17,
+						"operation":	"number-greater-than",
+						"attribute":	"mem-usage-percent-change",
+						"operand":	"30"
+					}],
+				"actions":	[]
+			}, {
+				"rule-id":	6,
+				"rule-type":	"request-large-mem-usage",
+				"rule-parent-id":	-1,
+				"app-id":	-1,
+				"rule-name":	"High Memory Usage",
+				"enabled":	true,
+				"description":	"Triggered when a PHP request consumes more than the specified amount of memory",
+				"rule-url":	"",
+				"rule-creator":	0,
+				"severity":	-1,
+				"conditions":	[{
+						"condition-id":	18,
+						"operation":	"number-greater-than",
+						"attribute":	"mem-usage-percent-change",
+						"operand":	"15"
+					}],
+				"actions":	[]
+			}, {
+				"rule-id":	7,
+				"rule-type":	"request-relative-large-out-size",
+				"rule-parent-id":	-1,
+				"app-id":	-1,
+				"rule-name":	"Inconsistent Output Size",
+				"enabled":	true,
+				"description":	"Triggered when a PHP request's output size deviates from the average by the percentage specified (measured per URL)",
+				"rule-url":	"",
+				"rule-creator":	0,
+				"severity":	1,
+				"conditions":	[{
+						"condition-id":	19,
+						"operation":	"number-greater-than",
+						"attribute":	"out-size-percent-change",
+						"operand":	"200"
+					}],
+				"actions":	[]
+			}, {
+				"rule-id":	7,
+				"rule-type":	"request-relative-large-out-size",
+				"rule-parent-id":	-1,
+				"app-id":	-1,
+				"rule-name":	"Inconsistent Output Size",
+				"enabled":	true,
+				"description":	"Triggered when a PHP request's output size deviates from the average by the percentage specified (measured per URL)",
+				"rule-url":	"",
+				"rule-creator":	0,
+				"severity":	0,
+				"conditions":	[{
+						"condition-id":	20,
+						"operation":	"number-greater-than",
+						"attribute":	"out-size-percent-change",
+						"operand":	"50"
+					}],
+				"actions":	[]
+			}, {
+				"rule-id":	8,
+				"rule-type":	"zend-error",
+				"rule-parent-id":	-1,
+				"app-id":	-1,
+				"rule-name":	"PHP Error",
+				"enabled":	true,
+				"description":	"Triggered when a PHP error of one of the selected error levels is reported",
+				"rule-url":	"",
+				"rule-creator":	0,
+				"severity":	1,
+				"conditions":	[{
+						"condition-id":	21,
+						"operation":	"bitwise-and",
+						"attribute":	"error-type",
+						"operand":	"85"
+					}],
+				"actions":	[]
+			}, {
+				"rule-id":	8,
+				"rule-type":	"zend-error",
+				"rule-parent-id":	-1,
+				"app-id":	-1,
+				"rule-name":	"PHP Error",
+				"enabled":	true,
+				"description":	"Triggered when a PHP error of one of the selected error levels is reported",
+				"rule-url":	"",
+				"rule-creator":	0,
+				"severity":	0,
+				"conditions":	[{
+						"condition-id":	22,
+						"operation":	"bitwise-and",
+						"attribute":	"error-type",
+						"operand":	"6050"
+					}],
+				"actions":	[]
+			}, {
+				"rule-id":	9,
+				"rule-type":	"java-exception",
+				"rule-parent-id":	-1,
+				"app-id":	-1,
+				"rule-name":	"Uncaught Java Exception",
+				"enabled":	true,
+				"description":	"Triggered when Java code called through the Java Bridge failed due to an uncaught exception",
+				"rule-url":	"",
+				"rule-creator":	0,
+				"severity":	1,
+				"conditions":	[],
+				"actions":	[]
+			}, {
+				"rule-id":	10,
+				"rule-type":	"custom",
+				"rule-parent-id":	-1,
+				"app-id":	-1,
+				"rule-name":	"Custom Event",
+				"enabled":	true,
+				"description":	"Triggered when the API function 'zend_monitor_custom_event' is called from inside PHP code",
+				"rule-url":	"",
+				"rule-creator":	0,
+				"severity":	0,
+				"conditions":	[],
+				"actions":	[]
+			}, {
+				"rule-id":	11,
+				"rule-type":	"custom",
+				"rule-parent-id":	-1,
+				"app-id":	-1,
+				"rule-name":	"Zend Framework Exception",
+				"enabled":	true,
+				"description":	"Triggered when Zend Framework Exception thrown",
+				"rule-url":	"",
+				"rule-creator":	0,
+				"severity":	0,
+				"conditions":	[],
+				"actions":	[]
+			}, {
+				"rule-id":	12,
+				"rule-type":	"jq-job-exec-error",
+				"rule-parent-id":	-1,
+				"app-id":	-1,
+				"rule-name":	"Job Execution Error",
+				"enabled":	true,
+				"description":	"Triggered when the system is unable to run a queued or scheduled job",
+				"rule-url":	"",
+				"rule-creator":	0,
+				"severity":	1,
+				"conditions":	[],
+				"actions":	[]
+			}, {
+				"rule-id":	13,
+				"rule-type":	"jq-job-logical-failure",
+				"rule-parent-id":	-1,
+				"app-id":	-1,
+				"rule-name":	"Job Logical Failure",
+				"enabled":	true,
+				"description":	"Triggered when a job is reported as \"failed\" using the ZendJobQueue::setCurrentJobStatus() method",
+				"rule-url":	"",
+				"rule-creator":	0,
+				"severity":	1,
+				"conditions":	[],
+				"actions":	[]
+			}, {
+				"rule-id":	14,
+				"rule-type":	"jq-job-exec-delay",
+				"rule-parent-id":	-1,
+				"app-id":	-1,
+				"rule-name":	"Job Execution Delay",
+				"enabled":	true,
+				"description":	"Triggered when a job starts in delay",
+				"rule-url":	"",
+				"rule-creator":	0,
+				"severity":	0,
+				"conditions":	[],
+				"actions":	[]
+			}, {
+				"rule-id":	15,
+				"rule-type":	"tracer-write-file-fail",
+				"rule-parent-id":	-1,
+				"app-id":	-1,
+				"rule-name":	"Failed Writing Code Tracing Data",
+				"enabled":	true,
+				"description":	"Triggered when Code Tracing fails to write trace data to disk",
+				"rule-url":	"",
+				"rule-creator":	0,
+				"severity":	1,
+				"conditions":	[],
+				"actions":	[]
+			}]
+	}]

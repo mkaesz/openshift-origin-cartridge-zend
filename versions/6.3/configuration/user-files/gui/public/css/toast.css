@@ -1,0 +1,82 @@
+@CHARSET "ISO-8859-1";
+.toast {
+	max-width:600px;
+	padding: 8px 35px 8px 35px;
+	margin-bottom: 18px;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+	border: 1px solid #FBEED5;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	position: fixed;
+	top: 62px;
+	z-index: 100000; /* simple modal is 99998 and 99999 */
+	font-weight: bold;
+	opacity:0.8;
+  	filter:alpha(opacity=80); /* For IE8 and earlier */
+	box-shadow: 2px 2px 5px #888888;
+
+}
+
+.toast.hidden {
+	display:none;
+}
+
+.toast.notification {
+	background:#EDF7E5 url('../images/ok-message-icon.png') 7px center no-repeat;
+	border-color: #50b404;
+	color: #50b404;
+}
+
+.toast.notice {
+	background: #FFEEE5 url('../images/error-message-icon.png') 7px center no-repeat;
+	border-color: #FF5400;
+	color: #FF5400;
+}
+
+.toast.alert {
+	background: #FFEEE5 url('../images/error-message-icon.png') 7px center no-repeat;
+	border-color: #FF5400;
+	color: #FF5400;
+}
+.toast .content {
+	float:left;
+	border: 0px;
+	background: transparent;
+}
+
+.toast .close {
+	position: absolute;
+	top: 8px;
+	right: 8px;
+	cursor: pointer;
+	line-height: 18px;
+	color: black;
+	text-shadow: 0 1px 0 white;
+	opacity: 0.2;
+	filter: alpha(opacity=20);
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 20px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: bold;
+	height: 18px;
+	box-sizing: border-box;
+}
+
+.toast .close:hover {
+color: black;
+text-decoration: none;
+opacity: 0.4;
+filter: alpha(opacity=40);
+cursor: pointer;
+}
+
+.toast.static {
+	box-shadow: none;
+	position: relative;
+	display: inline-block;
+	left: 0;
+	top: 0;
+	margin: 0;
+	opacity: 1;
+}

@@ -1,0 +1,13 @@
+ServerRoot "<%= ENV['OPENSHIFT_ZEND_DIR'] %>"
+DocumentRoot "<%= ENV['OPENSHIFT_HOMEDIR'] %>app-root/runtime/repo/php"
+Listen <%= ENV['OPENSHIFT_ZEND_IP'] %>:8080
+User <%= ENV['OPENSHIFT_GEAR_UUID'] %>
+Group <%= ENV['OPENSHIFT_GEAR_UUID'] %>
+ErrorLog "|/usr/sbin/rotatelogs <%= ENV['OPENSHIFT_ZEND_DIR'] %>logs/error_log-%Y%m%d-%H%M%S-%Z 86400"
+CustomLog "|/usr/sbin/rotatelogs <%= ENV['OPENSHIFT_ZEND_DIR'] %>logs/access_log-%Y%m%d-%H%M%S-%Z 86400" combined
+#DefaultRuntimeDir "<%= ENV['OPENSHIFT_ZEND_DIR'] %>run"
+#php_value include_path ".:<%= ENV['OPENSHIFT_HOMEDIR'] %>app-root/runtime/repo/libs/:<%= ENV['OPENSHIFT_ZEND_DIR'] %>phplib/pear/pear/php/:/usr/share/pear/"
+
+<Directory "<%= ENV['OPENSHIFT_HOMEDIR'] %>app-root/runtime/repo/php">
+  AllowOverride All
+  </Directory>

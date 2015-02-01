@@ -1,0 +1,138 @@
+@CHARSET "UTF-8";
+
+#main-container {
+	/*text-align: center;*/
+}
+
+.wizard .side-legend {
+	height:264px;
+}
+
+.wizard .wizard-page {
+	width: auto;
+}
+
+.wizard-page .page-wrapper {
+	overflow: hidden;
+}
+
+.wizard-page .wizard-content-pane {
+	overflow: auto;
+	height: 219px;
+}
+
+.wizard .wizard-page .page-wrapper {
+	width: 399px;
+	height: 249px;
+}
+
+#bootstrapWizard {
+	margin: 120px auto;
+}
+
+textarea.eula {
+	resize:none;
+	font-family: monospace;
+	font-size:12px;
+	width: 100%;
+	overflow-x: hidden;
+}
+
+#eulaContent {
+	height: 127px !important;
+	
+}
+
+.zend_form dd {
+	margin-left: 3px;
+	padding-right: 10px;
+}
+
+.zend_form label, .zend_form legend, .page-wrapper {
+	color: #000;
+}
+
+.zend_form dt {
+	clear: both;
+}
+
+.wizard-page #accept-terms-form {
+	line-height: 24px;
+	margin: 0;
+}
+
+.wizard-page #accept-terms-form label {
+	margin-left: 5px;
+}
+
+.zend_form input#accept-terms {
+	clear: none;
+	margin-left: 3px;
+}
+
+#deployment-set-installation table tr td:first-child {
+    width: 100px;
+}
+
+.tableDescContent td:first-child p,
+.general-details-top tr td:first-child p {
+    text-align: left;
+}
+
+.tableDescContent td:first-child,
+.general-details-top tr td:first-child {
+	line-height: 27px;
+}
+
+#summaryContent ul li p {
+	padding-left: 8px;
+}
+#summaryContent ul {
+	padding: 0;
+	margin: 0;
+}
+
+#joinClusterContent {
+	height: 384px;
+	overflow: auto;
+}
+
+#bootstrap-password div.validation-advice, #bootstrap-password input {
+	width: 185px;
+}
+
+.deploy_library_entry:FIRST-CHILD {
+	margin-top: 10px;
+}
+.deploy_library_entry {
+	margin-top: 45px;
+}
+
+.deploy_library_entry-logo {
+	max-height: 80px;
+	max-width: 380px;
+}
+
+.progress_indicator {
+	line-height: 22px;
+	margin-right: 6px;
+	width: 110px;
+}
+
+.progress_bar {
+	line-height: 22px;
+}
+
+.progress_bar progress {
+	width: 150px;
+}
+
+#libraries-deployment-header .info-icon {
+	margin-top: 12px;
+	margin-left: 9px;
+	cursor: pointer;
+}
+
+#libraries-deployment-header {
+	height: 40px;
+}

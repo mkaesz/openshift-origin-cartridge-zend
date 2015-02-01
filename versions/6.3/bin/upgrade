@@ -1,0 +1,5 @@
+#!/bin/bash -eu
+
+zend_version=$1
+curr=$2
+next=$3

@@ -1,0 +1,13 @@
+@CHARSET "UTF-8";
+
+#stats-actions {
+	position: absolute;
+	z-index: 10;
+	left: 7px;
+	top: 0;
+}
+		
+.map-chart #stats-actions {
+	left: auto;
+	right: 0;
+}

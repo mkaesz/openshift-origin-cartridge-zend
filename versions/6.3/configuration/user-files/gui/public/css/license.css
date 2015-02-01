@@ -1,0 +1,93 @@
+@CHARSET "UTF-8";
+
+#license_display_box {
+	width: 615px;
+	border: 1px solid grey;
+	margin: 10px;
+	padding: 10px;
+}
+
+#license_display_box h2 {
+	font-size: 16px;
+	margin-bottom: 9px;
+}
+
+#license_properties-table {
+	width: 340px;
+}
+#license_properties-table td {
+	font-size: 14px;
+	padding: 4px 10px 4px
+}
+
+#license_properties-messages {
+	width: 220px;
+}
+
+#license_message_display-error ul {
+	list-style-type: none;
+	padding: 0;
+}
+
+#license_form_message {
+	margin: 0;
+	margin-bottom: 25px !important;
+	clear: both;
+}
+
+#license_properties-messages .toast, #license_form_message.toast {
+	position: inherit;
+	box-shadow: 0 0 0;
+	padding-right: 6px;
+	margin-bottom: 2px;
+	background-position: 7px 7px;
+}
+
+#license_details_dialogue-form label {
+	display: block;
+	height: 18px;
+	clear:left;
+	width: 100px;
+	margin-top: 3px;
+	margin-bottom: 10px;
+	font-weight:bold;
+}
+
+#license_details_dialogue-form input {
+	width: 20em;
+	
+}
+
+#license_details_dialogue-form > ul {
+	margin-bottom: 25px;
+	display:block;
+	height: 55px;
+}
+
+#simple-modal-box ul.capabilities-list {
+	margin: 2px 0 31px 0;
+}
+
+ul.capabilities-list li {
+	list-style-type: disc;
+	list-style-position: inside;
+	padding-left: 5px;
+}
+
+ul.capabilities-list {
+	padding: 0;
+	margin-top: 0;
+}
+
+#license_complete_message {
+	width: 422px;
+	padding: 10px;
+}
+
+#license_complete_message h2 {
+	margin-bottom: 10px;
+}
+
+.license-details-form-desc {
+	height: 45px;
+}

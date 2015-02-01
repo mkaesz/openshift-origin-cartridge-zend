@@ -1,0 +1,85 @@
+#!/bin/bash -eux
+set -x
+source $OPENSHIFT_CARTRIDGE_SDK_BASH
+
+version="$1"
+
+echo "${OPENSHIFT_ZEND_DIR}php-5.5/bin" > ${OPENSHIFT_ZEND_DIR}env/OPENSHIFT_ZEND_PATH_ELEMENT
+echo "${OPENSHIFT_ZEND_DIR}php-5.5/tmp" > ${OPENSHIFT_ZEND_DIR}env/ZEND_TMPDIR
+echo "${OPENSHIFT_ZEND_DIR}php-5.5/etc/php.ini" > ${OPENSHIFT_ZEND_DIR}env/PHPRC
+echo "${OPENSHIFT_ZEND_DIR}php-5.5/etc/conf.d" > ${OPENSHIFT_ZEND_DIR}env/PHP_INI_SCAN_DIR
+echo "Zend Server" > ${OPENSHIFT_ZEND_DIR}env/PRODUCT_NAME
+echo "6.3.0" > ${OPENSHIFT_ZEND_DIR}env/PRODUCT_VERSION
+#sockets and semaphore files identification number (not related to ZEND_UID):
+echo "1328" > ${OPENSHIFT_ZEND_DIR}env/INSTALLATION_UID
+echo "DIST=pe" > ${OPENSHIFT_ZEND_DIR}env/DIST
+
+export LD_LIBRARY_PATH=${OPENSHIFT_ZEND_DIR}php-5.5/lib
+export PATH=${OPENSHIFT_ZEND_DIR}php-5.5/bin:${PATH}
+export PHPRC=${OPENSHIFT_ZEND_DIR}configuration/etc/php.ini
+export PHP_INI_SCAN_DIR=${OPENSHIFT_ZEND_DIR}php-5.4/etc/conf.d
+
+shopt -s dotglob
+
+mkdir -p ${OPENSHIFT_ZEND_DIR}php-5.5
+
+echo "Creating private copies of Zend Server files..." >> blub.log
+mkdir -p ${OPENSHIFT_ZEND_DIR}php-5.5/{share,var/db}
+#cp -r ${OPENSHIFT_ZEND_DIR}versions/$version/configuration/user-files/share/pear ${OPENSHIFT_ZEND_DIR}php-5.5/share
+cp -r ${OPENSHIFT_ZEND_DIR}versions/$version/configuration/user-files/var/db/geo.db ${OPENSHIFT_ZEND_DIR}php-5.5/var/db
+#cp -r ${OPENSHIFT_ZEND_DIR}versions/$version/configuration/user-files/share/pear/* ${OPENSHIFT_ZEND_DIR}php-5.5/share/pear
+
+echo "1" >> blub.log
+
+cp -r ${OPENSHIFT_ZEND_DIR}versions/$version/configuration/user-files/* ${OPENSHIFT_ZEND_DIR}php-5.5/
+cp -r /usr/local/zend/gui/public ${OPENSHIFT_ZEND_DIR}php-5.5/gui
+echo "2" >> blub.log
+mkdir -p ${OPENSHIFT_ZEND_DIR}configuration/etc/conf.d
+mkdir -p ${OPENSHIFT_ZEND_DIR}configuration/etc/conf
+echo "3" >> blub.log
+
+cp -f ${OPENSHIFT_ZEND_DIR}versions/$version/configuration/etc/conf.d/* ${OPENSHIFT_ZEND_DIR}configuration/etc/conf.d/
+cp -f ${OPENSHIFT_ZEND_DIR}versions/$version/configuration/etc/conf/* ${OPENSHIFT_ZEND_DIR}configuration/etc/conf/
+
+#Link the php.ini to the one that is accessbile to the Zend Server GUI
+ln -s ../../php-5.5/etc/php.ini ${OPENSHIFT_ZEND_DIR}configuration/etc
+
+echo "4" >> blub.log
+
+echo "Creating/Upgrading Zend databases. This may take several minutes..."
+$ZCE_PREFIX/gui/lighttpd/sbin/php -c $ZCE_PREFIX/gui/lighttpd/etc/php-fcgi.ini $ZCE_PREFIX/share/scripts/zs_create_databases.php zsDir=$ZCE_PREFIX toVersion=6.3.0 || echo -e "\n\nERROR: Can't create Zend DB!\n\n"
+
+echo "5" >> blub.log
+
+#Generate 7 day trial license
+${OPENSHIFT_ZEND_DIR}php-5.5/bin/zsd ${OPENSHIFT_ZEND_DIR}php-5.5/etc/zsd.ini --generate-license
+
+echo "6" >> blub.log
+
+#ZCLOUD-60 - create empty php and scd log files
+touch ${OPENSHIFT_ZEND_DIR}php-5.5/var/log/php.log
+touch ${OPENSHIFT_ZEND_DIR}php-5.5/var/log/scd.log
+echo "7" >> blub.log
+
+# Pear setup
+#rm -f ${OPENSHIFT_HOMEDIR}.pearrc
+#mkdir -p ${OPENSHIFT_ZEND_DIR}phplib/pear/{docs,ext,php,cache,cfg,data,download,temp,tests,www}
+#pear config-create ${OPENSHIFT_ZEND_DIR}phplib/pear/ ${OPENSHIFT_HOMEDIR}.pearrc
+#pear -c ${OPENSHIFT_HOMEDIR}.pearrc config-set php_ini "${OPENSHIFT_ZEND_DIR}configuration/etc/php.ini"
+#pear -c ${OPENSHIFT_HOMEDIR}.pearrc config-set php_bin "${OPENSHIFT_ZEND_DIR}php-5.5/bin/php"
+#pear -c ${OPENSHIFT_HOMEDIR}.pearrc config-set ext_dir "${OPENSHIFT_ZEND_DIR}php-5.5/lib/php_extensions"
+#pear -c ${OPENSHIFT_HOMEDIR}.pearrc config-set auto_discover 1
+#pear -c ${OPENSHIFT_HOMEDIR}.pearrc channel-update pear.php.net
+#pear -c ${OPENSHIFT_HOMEDIR}.pearrc upgrade --force pear
+
+#pear -c ${OPENSHIFT_HOMEDIR}.pearrc config-get bin_dir > "$OPENSHIFT_ZEND_DIR/env/OPENSHIFT_PHP_PATH_ELEMENT"
+echo "8" >> blub.log
+#Removing and double slashes from configuration files
+for i in $(grep -rl // ${OPENSHIFT_ZEND_DIR}php-5.5/etc ${OPENSHIFT_ZEND_DIR}php-5.5/gui/lighttpd --include=*.ini)
+do
+sed 's/\/\/z/\/z/g' -i $i
+done
+echo "9" >> blub.log
+#ZCLOUD-127 - unset LD_LIBRARY_PATH so that Zend Server does not collide with other cartridges
+unset LD_LIBRARY_PATH
+client_result "Note: You should set password for the Zend Server Console at: https://$OPENSHIFT_APP_DNS/ZendServer"

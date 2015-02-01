@@ -1,0 +1,123 @@
+@CHARSET "ISO-8859-1";
+
+.appDetails {
+	margin: 0px 5px 5px 5px;
+}
+
+.more-details {
+	color: #355968;
+	font-weight: bold;
+	background: url('../images/apps-stats-arrow-over.png') right 2px no-repeat;
+	padding-right: 18px;
+}
+.more-details a{
+	color: #355968;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.tabs .active {
+    background-color: #f6fafc;
+    border-bottom-color: #f6fafc;
+}
+
+.appDetails .content {
+    margin-top: -2px;
+    border: 2px #C6DEE8 solid;
+    background: #f6fafc;
+    
+    padding: 10px;
+	
+    overflow-y:scroll;
+	overflow-x:hidden;
+	
+}
+.details-column{
+	float:left;
+	width:450px;
+	height:100%;
+	border-left:1px solid #c5dee8;
+	padding-left:20px;
+}
+.details-column-right{
+	font-weight:bold; 
+	color: #3f6170;
+	float:left;
+	border-left:1px solid #c5dee8;
+	height:100%;
+	padding-left:30px;
+}
+
+/*** A table of 2 columns, left is description (example can be found on zgrid for issues, events and application)*/
+.tableWithDesc{
+	width:500px;
+	float:left;
+}
+.tableWithDesc tr td:first-child{
+	color: #96a3a9;
+	font-size: 12px;
+	font-weight: bold;
+	padding-right: 10px;
+	text-align: right;
+	white-space: nowrap;
+	overflow: hidden;
+	width:110px;
+}
+
+.tableWithDescServers {
+	width: 100%;
+}
+.tableWithDescServers tr th {
+    color: #7d929b;
+	background: #c6dee8;
+    font-size: 10px;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.tableWithDescServers tr th:first-child{
+	text-align: center;
+	width:70px;
+}
+.tableWithDescServers tr td {
+   	color: #122833;
+    font-size: 12px;
+    text-align: left;
+    white-space: nowrap;
+}
+.tableWithDescServers tr td:first-child{
+	text-align: center;
+	width:50px;
+}
+
+.app-details-logo {
+	max-height: 100px;
+	max-width: 100px;
+	float: right;
+	margin: 10px;
+}
+
+.redeployButton {
+	float: right;
+}
+
+.zgrid td input.checkboxRedeploy[type="checkbox"] {
+	margin-top: 5px;
+}
+
+.statusImage img {
+	margin-top: 5px;
+}
+
+.rule-help {
+	margin-left: 5px;
+	background: url('../images/question-mark-icon-trans.png') top right no-repeat;
+	height: 12px;
+	width: 12px;
+	display: inline-block;
+	cursor: help;
+}
+
+.floating-tip input.rename-field {
+	width:230px;
+}

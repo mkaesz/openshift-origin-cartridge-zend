@@ -1,0 +1,96 @@
+<?php $this->emailSubject(_t('%s Event', array($issue->getRuleName()))) ?>
+<table align="left" bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" width="686">
+<tbody>
+<tr>
+  <td width="686" align="left" valign="top" bgcolor="#ffffff"><img src="http://static.zend.com/topics/ZS6-users-assistance-Monitoring-Event-top-banner-687x50px-02.png" alt="Zend Server 6 Monitoring Event" width="687" height="50" border="0"></td>
+  </tr>
+<tr>
+  <td align="left" valign="top" bgcolor="#ffffff" style="font-size: 12px; color: rgb(57, 72, 82); line-height: 150%; font-family: Arial,sans-serif; padding-left: 10px; padding-top: 10px;">
+    <p><strong style="font-size: 20px; color: rgb(0, 143, 213); line-height: 100%; font-family: Trebuchet MS; letter-spacing:0px;"><?php echo $issue->getRuleName(); ?></strong></p>
+    <p><strong>Zend Monitor has identified a PHP Error event has occured in your environment!</strong></p>
+    <table width="600" border="0" cellspacing="0" cellpadding="0" >
+      <tr>
+        <td colspan="3" style="border-top:1px solid #b6c2c8; border-bottom:1px solid #b6c2c8; color: rgb(0, 143, 213); padding-left:10px; line-height:25px;"><strong>Event details</strong></td>
+        </tr>
+      <tr bgcolor="#e8f7fe">
+        <td style="padding-left:10px; line-height:25px;">ID</td>
+        <td><?php echo $eventGroup->getIssueId(); ?></td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="87" style="padding-left:10px; line-height:25px;">Type</td>
+        <td width="407"><?php echo $issue->getRuleName(); ?></td>
+        <td width="106">&nbsp;</td>
+      </tr>
+      <tr bgcolor="#e8f7fe">
+        <td style="padding-left:10px; line-height:25px;">Severity</td>
+        <td>
+        	<?php
+        		if ($issue->getSeverity() == ZM_SEVERITY_INFO) {
+					$severityBackground = 'rgb(108, 197, 233)';
+					$severityTextColor = '#fff';
+				} elseif ($issue->getSeverity() == ZM_SEVERITY_NORMAL) {
+					$severityBackground = '#ffe200';
+					$severityTextColor = '#000';
+				} else {
+					$severityBackground = '#ec2c2c';
+					$severityTextColor = '#fff';
+				}
+        	?>
+        	<div style="background: <?php echo $severityBackground; ?>;text-align: center;color: <?php echo $severityTextColor; ?>;display: inline-block;padding: 0 8px;font-size: 11px;font-weight: bold;height: 18px;min-width: 60px;line-height: 18px;-moz-border-radius: 11px;-khtml-border-radius: 11px;-webkit-border-radius: 11px;border-radius: 11px;">
+        	<?php echo $this->issueSeverity($issue->getSeverity()); ?>
+        	</div>
+        </td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td style="padding-left:10px; line-height:25px;">URL</td>
+        <td><?php echo $issue->getUrl(); ?></td>
+        <td>&nbsp;</td>
+      </tr>
+      <?php $filename = $issue->getFilename(); if (! empty($filename)) : ?>
+      <tr bgcolor="#e8f7fe">
+        <td style="padding-left:10px; line-height:25px;">Source File</td>
+        <td><?php echo $filename; ?></td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td style="padding-left:10px; line-height:25px;">Line</td>
+        <td><?php echo $issue->getLine(); ?></td>
+        <td>&nbsp;</td>
+      </tr>
+      <?php endif; ?>
+      <?php $errorString = $eventGroup->getErrorString(); if (! empty($errorString)) : ?>
+      <tr bgcolor="#e8f7fe">
+        <td style="padding-left:10px; border-bottom:1px solid #b6c2c8; line-height:25px;">Error String</td>
+        <td style="border-bottom:1px solid #b6c2c8; "><?php echo $errorString; ?></td>
+        <td style="border-bottom:1px solid #b6c2c8; ">&nbsp;</td>
+      </tr>
+      <?php endif; ?>
+      <tr>
+        <td colspan="3" style="padding-top:10px;"><table width="598" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="320">
+            	<a href="<?php echo $baseUrl . '/Issue?issueId=' . $eventGroup->getIssueId(); ?>">
+            		<img src="http://static.zend.com/topics/Monitoring-Event-See-event-in-ZS6-button-195x27px.png" alt="" width="195" height="27" border="0"></td>
+            	</a>
+          </tr>
+        </table></td>
+        </tr>
+    </table>
+    <p><table width="0" border="0" cellspacing="0" cellpadding="0" style="margin: 30px 0;">
+    <tr>
+      <td width="31"><a href="http://www.zend.com/server/redirect/monitoring-rules-video"><img src="http://static.zend.com/topics/video-icon-47x52px.png" alt="Working with Monitoring Rules" height="24" border="0"></a></td>
+      <td width="244" align="left" style="padding-top:10px;"><a href="http://www.zend.com/server/redirect/monitoring-rules-video">Working with Monitoring Rules</a></td>
+    </tr>
+    <tr>
+      <td width="31"><a href="<?php echo $this->helpLink('monitoring_rules_concept'); ?>"><img src="http://static.zend.com/topics/help-icon-16x16px.png" alt="Learn more about monitoring rules" border="0"></a></td>
+      <td width="244" align="left" style="padding-top:10px;"><a href="<?php echo $this->helpLink('monitoring_rules_concept'); ?>">Learn more about monitoring rules</a></td>
+    </tr>
+  </table>
+  </p>
+   </td>
+  </tr>
+<tr>
+  <td align="left" valign="top" bgcolor="#ffffff" style="font-size: 10px; color: rgb(57, 72, 82); line-height: 100%; font-family: Arial,sans-serif; padding: 10px;">
+  <a href="<?php echo $baseUrl . '/MonitorEditRule?id=' . $issue->getRuleId(); ?>">Click here</a> to stop receiving emails for this monitoring event  

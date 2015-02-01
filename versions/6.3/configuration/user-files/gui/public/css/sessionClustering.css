@@ -1,0 +1,32 @@
+@CHARSET "UTF-8";
+
+.internal-padding > div, .internal-padding > h2 {
+	padding-left:30px;
+}
+
+h2.limitedTopMessage {
+	padding-left:30px;
+}
+
+#sc_settings-form .form-field:first-child {
+	margin-top: 0;
+}
+
+#sc_settings-form .form-field {
+	margin-top: 35px;
+	margin-bottom: 5px;
+}
+
+#sc_settings-form .zend-form-table-description {
+	color:grey;
+	margin-top: 5px;
+	margin-bottom: 35px;
+}
+
+#sc_settings-form .form-field label input[type="checkbox"] {
+	vertical-align: top;
+}
+
+#session_clustering_submit-errors {
+	margin-left: 12px;
+}

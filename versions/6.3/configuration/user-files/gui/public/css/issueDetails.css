@@ -1,0 +1,141 @@
+@CHARSET "UTF-8";
+
+html {
+	overflow: hidden;
+}
+
+#issue-details-events-list {
+	width: 250px;
+	float: left;
+	background: #dcdcdc;
+	height: 100%;
+}
+
+#issue-details-content-wrapper {
+	width: 60%;
+	float: left;
+}
+
+#issue-details-content-wrapper .mui-leaf {
+	text-indent: 13px;
+	line-height: 22px;
+	white-space: nowrap;
+}
+
+#issue-details-content-wrapper .mui-leaf-image {
+	background: url("../images/leaf.gif") no-repeat scroll 0 0 transparent
+}
+
+
+#issue-details-content {
+	width: 100%;
+	overflow: auto;
+}
+
+#issue-details-content > div {
+	display: none;
+	overflow: auto;
+}
+
+#issue-details-content .errorMsg {
+	display: block;
+	padding: 10px;
+}
+
+#backtrace-showfile {
+	padding: 3px;
+	border-top: 1px solid #EDEDED;
+	display: none;
+}
+
+#mui-source-file td {
+    padding: 0 5px;
+}
+
+#mui-source-file code {
+    font-family: monospace;
+    font-size: 11px;
+    line-height: 18px;
+}
+
+.event-bottom-actions {
+	position: fixed; 
+	bottom: 0; 
+	right: 0; 
+	width: 90%;
+}
+
+.jobqueue_event_properties li strong {
+	margin-right: 8px;
+}
+
+#backtrace-container {
+	overflow: auto;
+}
+
+#backtrace-backtrace {
+	 color: #808080;
+}
+
+.backtrace-panels {
+	padding: 3px;
+	margin: 0;
+}
+
+.debugSettingsTipWrapper label {
+	font-weight: normal;
+	margin-left: 8px;
+}
+
+.debugSettingsTipWrapper button {
+	float: right;
+}
+
+.debugSettingsTipWrapper {
+	width: 290px;
+}
+
+.debugSettingsTipWrapper table {
+	margin-bottom: 0px;
+}
+
+.debugSettingsTipWrapper table td {
+	padding: 5px 10px;
+}
+
+.bar {
+	background: none repeat scroll 0 0 #E2EFF5;
+	color: #3E5C67;
+	font-size: 13px;
+	font-weight: normal;
+	width: 290px;
+	text-align: right;
+}
+
+.bar span {
+	padding-right: 5px;
+	cursor: pointer;
+}
+
+.debugSettingsTipWrapper {
+	background-color: #fff;
+	border: 1px solid #a3bcc7;
+	word-wrap: break-word;
+    /* padding: 5px 15px; */
+    color: #000;
+	padding: 0px;
+    font-weight: bold;
+    font-size: 11px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+	margin-top: 0px !important;
+}
+
+div.code {
+	font-family: Courier New
+}
+
+#event-studio-actions-bar button.float-right.settings {
+	margin-top: 5px;
+}
