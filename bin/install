@@ -22,4 +22,4 @@ mkdir -p ${OPENSHIFT_ZEND_DIR}oracle
 mkdir -p ${OPENSHIFT_HOMEDIR}.drush
 
 # Call the version specific install script
-#exec ${OPENSHIFT_ZEND_DIR}versions/$version/bin/install $version
+exec ${OPENSHIFT_ZEND_DIR}versions/$version/bin/install $version
