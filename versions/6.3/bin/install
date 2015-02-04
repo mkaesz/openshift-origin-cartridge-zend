@@ -1,4 +1,5 @@
 #!/bin/bash -eux
+set -x
 source $OPENSHIFT_CARTRIDGE_SDK_BASH
 
 version="$1"
