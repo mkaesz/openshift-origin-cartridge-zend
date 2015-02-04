@@ -8,6 +8,6 @@ CustomLog "|/usr/sbin/rotatelogs <%= ENV['OPENSHIFT_ZEND_DIR']%>/logs/access_log
 #DefaultRuntimeDir "<%= ENV['OPENSHIFT_ZEND_DIR'] %>run"
 #php_value include_path ".:<%= ENV['OPENSHIFT_HOMEDIR'] %>app-root/runtime/repo/libs/:<%= ENV['OPENSHIFT_ZEND_DIR'] %>phplib/pear/pear/php/:/usr/share/pear/"
 
-<Directory "<%= ENV['OPENSHIFT_REPO_DIR]%>php">
+<Directory "<%= ENV['OPENSHIFT_REPO_DIR'] %>php">
   AllowOverride all
 </Directory>
