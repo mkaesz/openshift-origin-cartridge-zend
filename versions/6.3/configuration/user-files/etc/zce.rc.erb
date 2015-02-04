@@ -1,0 +1,11 @@
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:<%= ENV['OPENSHIFT_ZEND_DIR'] %>php-5.5/lib
+ZCE_PREFIX=<%= ENV['OPENSHIFT_ZEND_DIR'] %>php-5.5
+WEB_USER=<%= ENV['OPENSHIFT_APP_UUID'] %>
+PRODUCT_NAME="Zend Server"
+#Shorten the name so the filename for sockets is less than 110 charachters
+export INSTALLATION_UID=1328
+export ZEND_TMPDIR=<%= ENV['OPENSHIFT_ZEND_DIR'] %>php-5.5/tmp
+PRODUCT_VERSION=6.3.0
+export PHPRC=$ZCE_PREFIX/etc/php.ini
+export PHP_INI_SCAN_DIR=$ZCE_PREFIX/etc/conf.d
+DIST=pe

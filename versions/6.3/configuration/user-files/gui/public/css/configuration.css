@@ -1,0 +1,99 @@
+@CHARSET "ISO-8859-1";
+
+.zgrid .extensionsTable {
+	background: none repeat scroll 0 0 #E2EFF5; /* #ABCAD8 */
+	padding: 9px;
+}
+
+.zgrid .extensionsTable .directivesTableColumns {
+	width: 535px; 
+	float: left;
+}
+
+.zgrid .extensionsTable .directivesTableColumns:first-child {
+	margin-right: 13%;
+}
+
+.zgrid .extensionsTable td {
+	/* width: 50%; */
+}
+
+.zgrid .directivesTableContent {
+	width: 545px;
+}
+
+.zgrid .directivesTableContent h1 {
+	margin-bottom: 5px;
+}
+
+.zgrid .directivesTableContent label {
+	font-size: 11px;
+}
+
+.zgrid .directivesTableContent td {
+    color: #122833;
+	padding-bottom: 15px;
+	vertical-align: middle;
+}
+
+.zgrid .directivesTableContent tr td {
+	padding: 0 10px 18px 10px;
+}
+
+.zgrid .directivesTableContent tr td:first-child {
+	width: 100%;
+	line-height: 10px;
+	padding-right: 40px;
+}
+
+.zgrid .directivesTableContent tr td:last-child {
+	min-width: 133px;
+}
+
+.on-button,
+.off-button {
+	width: 65px;
+	height: 22px;
+	display: block;
+	cursor: pointer;
+}
+
+.on-button {
+	background: url("../images/on-button.png") left top no-repeat;
+}
+
+.off-button {
+	background: url("../images/off-button.png") left top no-repeat;
+}
+
+.zgrid .emptyContent tr td {
+    color: #93A3AB;
+    font-size: 12px;
+    font-weight: bold;
+    overflow: hidden;
+    padding-right: 10px;
+    text-align: left;
+    white-space: nowrap;
+}
+
+input.highlight-valid {
+	border: solid 3px green;
+	background-color: #CCFFCC;
+}
+
+input.invalid, div.invalid {
+	border: 2px solid red;
+}
+
+.grid-action-bar #clear {
+	float: right;
+	margin-top: 5px;
+	color: red;
+	font-size: 10px;
+}
+
+.tooltip {
+	padding: 4px;
+	background-color: white;
+	border: 1px solid black;
+}

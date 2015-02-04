@@ -1,0 +1,404 @@
+@CHARSET "US-ASCII";
+
+
+.wizard {
+	height: 520px;
+	border:0;
+	width: 700px;
+}
+
+.wizard fieldset.wizard-page.last-wizard-page .page-wrapper {
+	height: 471px;
+}
+
+
+
+.wizard fieldset.wizard-page {
+	width: 484px;
+	min-height: 450px;
+}
+.wizard fieldset.wizard-page div.page-wrapper {
+	width: 470px;
+	height: inherit;
+}
+
+.wizard fieldset.page-wrapper, .wizard ul.side-legend {
+	height: 500px;
+}
+
+.wizard .side-legend li h2 {
+	font-size: 11px;
+	color: #7e9097;
+} 
+
+fieldset {
+	width: 500px;
+	margin: 12px;
+}
+
+
+.form_elements-table {
+	width: auto;
+}
+
+.tableDescContent td.explanations {
+	white-space: pre-wrap;
+	width: 40px;
+	text-align:left;
+	font-weight:normal;
+	padding-top: 0;
+}
+
+.vhost-errors {
+	width: 201px;
+	padding-top: 3px;
+}
+
+#vhost-template-errors {
+	margin-bottom: 6px;
+    text-align: left;
+}
+
+#ssl-extra-fields {
+	width: 484px;
+}
+
+#ssl-extra-fields .validation-advice {
+	max-height: 146px;
+}
+
+.validation-advice {
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+	overflow: hidden;
+}
+
+input.validation-failed, textarea.validation-failed {
+	border: 2px solid red;
+}
+
+.validation-advice {
+	color: red;
+}
+
+.warning-advice {
+	color: #32505d;
+}
+
+.floating-tip-wrapper {
+	z-index: 100000 !important;
+}
+
+div.form_field:first-child {
+	margin-top: 18px;
+}
+
+div.form_field:last-child {
+	margin-top: 5px;
+	margin-bottom: 0;
+}
+
+fieldset.tight_form_fieldset {
+	margin-bottom: 6px;
+}
+
+fieldset.tight_form_fieldset div.form_field {
+	margin: 10px 0;
+}
+
+.form_field {
+	/*margin-bottom: 55px;*/
+} 
+
+.form_field label {
+	width: 170px;
+	display: inline-block;
+}
+
+.form_field input {
+	width: 150px;
+}
+
+.form_field-large.form_field label {
+	display: block;
+	width: 210px;
+}
+
+#ssl-enabled {
+	vertical-align: -2px;
+}
+
+.vhost-form-response-error {
+	position:relative;
+	z-index: 1000;
+	top: 0;
+	margin-bottom: 8px;
+	opacity: 1;
+	max-width: 380px;
+	word-break: break-all;
+	word-wrap: break-word;
+	
+}
+
+#vhost-ssl-errors-message.masked-error {
+	text-align: inherit;
+}
+.masked-error {
+	padding: 10px 15px 10px 15px;
+	text-align: center;
+}
+
+.mask {
+	opacity: 1;
+}
+
+.default-template-message {
+	padding-left: 25px;
+	margin-top: 7px;
+	font-style: italic;
+	background: url('../images/error-message-icon.png') left 2px no-repeat;	
+}
+
+.default-template-message.disabled {
+	background: url('../images/disabled-message-icon.png') left 2px no-repeat;	
+}
+
+.vhostDetails .content-labels-values label {
+	display: inline-block;
+	width: 160px;
+}
+
+.vhostDetails .content-labels-values span,
+.vhostDetails .content-labels-values pre {
+	
+}
+
+.vhostsSubList .tableWithDesc td {
+	padding: 4px;
+}
+
+.serverRow .serverRow-icon img {
+	vertical-align: middle;
+}
+
+.serverRow .serverRow-icon {
+	width: 24px;
+}
+
+.serverRow .serverRow-name {
+	width: 200px;
+}
+.serverRow .serverRow-messages {
+	white-space: normal;
+}
+
+.applicationRow-baseUrl, .applicationRow-installedLocation {
+	font-family: Courier New;
+}
+
+#vhost-form {
+	/*margin-bottom: 43px;*/	
+}
+
+#Autocompleter-vhost-port .mui-autocompleter-menu {
+	width: 85px;	
+}
+
+.removedLine {
+	color: red;
+}
+
+.addedLine {
+	color: green;
+}
+
+.regularLine {
+	color: gray;
+}
+
+fieldset.wizard-page.display-error textarea#vhost-template-textarea {
+	max-height: 228px;
+}
+
+/* For template display in zgridVhostDetails */
+.templateTextarea {
+	padding: 10px;
+	width: 750px;
+ 	overflow: auto;
+ 	font-size: 12px;
+ 	line-height: 15px;
+ 	
+ 	border: 1px inset #ccc;
+	background-color: white;
+   	font: 12px courier, monospace black;
+	
+}
+
+#vhost-template-textarea {
+	padding: 10px;
+	overflow: auto;
+	font-size: 12px;
+	line-height: 15px;
+	
+	border: 1px inset #ccc;
+  	font: 12px courier, monospace black;
+	
+	max-height: 400px;
+	
+	height:290px;
+	width:450px;
+}
+
+.zgrid_td-port img.port-any {
+	width: 24px;
+	height: 24px;
+	vertical-align: middle;
+}
+
+.codeBlock#vhostExaple {
+	color: #000;
+}
+
+#addLineInTemplate { 
+	color: #d14;
+}
+
+#vhostUnmanageContainer {
+	width: 450px;
+}
+
+.zgrid-vhost-property {
+	margin-left: 2px !important;
+	margin-right: 2px !important;
+}
+
+.zgrid-vhost-default {
+	background: url('../images/icons/checkmark.png') top left no-repeat;
+}
+
+.zgrid-vhost-deployment {
+	background: url('../images/icons/deploy-enabled.png') top left no-repeat;
+}
+
+.zgrid-vhost-ssl {
+	background: url('../images/icons/locked.png') top left no-repeat;
+}
+
+.add-vhost-wizard-modal.simple-modal {
+	width: 700px;
+}
+
+.add-vhost-wizard-modal.simple-modal .simple-modal-body.simple-modal-wizard-body {
+	padding: 0;
+	border: 0;
+}
+
+.add-vhost-wizard-modal.simple-modal .simple-modal-body {
+	min-height: 260px;
+}
+
+#allowToContinue {
+	width: auto; 
+	float: left; 
+	margin-top: 2px;
+}
+
+#allowToContinueLabel {
+	width: auto; 
+	text-align: left; 
+	margin-left: 20px;
+}
+
+textarea#vhost-template-textarea { 
+    resize: none; 
+}
+
+.radio-list input {
+	vertical-align: -2px;
+}
+
+ul#vhost-summary-ssl-files-list {
+	padding-left: 12px;
+}
+
+.vhost-summary-ssl-filename {
+	display: block;
+	width: 130px;
+}
+
+.vhost-summary-ssl-filepath {
+	max-width: 314px;
+}
+
+pre#vhost-summary-configuration-text.text-small {
+	height: 138px;
+}
+
+pre#vhost-summary-configuration-text.text-large {
+	height: 292px;
+}
+
+pre#vhost-summary-configuration-text {
+	height: 196px;
+	overflow: scroll;
+}
+
+#vhost-summary-action-address {
+	font-family: monospace;
+}
+
+#vhost-summary-action {
+	display: inline-block;
+}
+
+#vhost-summary-action.hidden {
+	display: none;
+}
+
+.form_field {
+	margin-bottom: 5px;
+}
+
+.form_field label {
+	width: 25%;
+}
+
+.form_field input[type="text"] {
+	width: 35%;
+}
+
+.form_field .vhost-errors {
+	width: 35%;
+}
+
+.notice-message {
+	margin-top: 7px;
+	font-style: italic;
+	position: absolute; 
+	bottom: 0; 
+	left: 0;	
+}
+
+#template-field-help {
+	margin-right: 15px;
+	margin-top: 4px;
+	cursor: help;
+}
+
+label.required:after {
+	content:" *";
+	color: red;
+}
+
+.required-fields {
+	color :red;
+	font-size: 10px;
+}
+
+#vhost-ssl-errors-message {
+	
+}
+
+#removeVhostContainer {
+	width: 320px;
+}

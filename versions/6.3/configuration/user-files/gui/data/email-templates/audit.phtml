@@ -1,0 +1,97 @@
+<?php $this->emailSubject(_t('%s', array($this->auditTypeById($type)))) ?>
+<table align="left" bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" width="686">
+<tbody>
+<tr>
+  <td width="686" align="left" valign="top" bgcolor="#ffffff"><img src="http://static.zend.com/topics/ZS6-users-assistance-Audit-Trail-top-banner-687x50px-02.png" alt="Zend Server 6 Audit Trail" width="687" height="50" border="0"></td>
+  </tr>
+<tr>
+  <td align="left" valign="top" bgcolor="#ffffff" style="font-size: 12px; color: rgb(57, 72, 82); line-height: 150%; font-family: Arial,sans-serif; padding-left: 10px; padding-top: 10px;">
+    <p><strong style="font-size: 20px; color: rgb(0, 143, 213); line-height: 100%; font-family: Trebuchet MS; letter-spacing:0px;"><?php echo $this->auditTypeById($type); ?></strong></p>
+    <p><strong>Zend Server has tracked and audited user activity!</strong></p>
+    <table width="600" border="0" cellspacing="0" cellpadding="0" >
+      <tr>
+        <td colspan="3" style="border-top:1px solid #b6c2c8; border-bottom:1px solid #b6c2c8; color: rgb(0, 143, 213); padding-left:10px; line-height:25px;"><strong>Action details:</strong></td>
+        </tr>
+      <tr bgcolor="#e8f7fe">
+        <td width="107" style="padding-left:10px; line-height:25px;">ID</td>
+        <td width="387"><?php echo $this->escapeHtml($id) ?></td>
+        <td width="106">&nbsp;</td>
+      </tr>
+      <tr>
+        <td style="padding-left:10px; line-height:25px;">Origin </td>
+        <td><?php echo $this->escapeHtml($origin) ?></td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr bgcolor="#e8f7fe">
+        <td style="padding-left:10px; line-height:25px; line-height:25px;">User </td>
+        <td><?php echo $this->escapeHtml($username) ?></td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td style="padding-left:10px; line-height:25px;">Creation Time</td>
+        <td><?php echo $this->dateFormat($timestamp) ?></td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr bgcolor="#e8f7fe">
+        <td style="padding-left:10px; line-height:25px;">Operation</td>
+        <td><?php echo $this->auditTypeById($type); ?></td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td style="padding-left:10px; line-height:25px;">Outcome</td>
+        <td>
+        	<div style="background: <?php echo ($outcome == 'Successful') ? '#5ba51c' : '#e75025'; ?>;text-align: center;color: #fff;display: inline-block;padding: 0 8px;font-size: 11px;font-weight: bold;height: 18px;min-width: 60px;line-height: 18px;-moz-border-radius: 11px;-khtml-border-radius: 11px;-webkit-border-radius: 11px;border-radius: 11px;">
+        	<?php echo $outcome; ?>
+        	</div>
+        </td>
+        <td>&nbsp;</td>
+      </tr>
+      <?php $extraData = $this->auditExtraData($extraData); if (! empty($extraData)) : ?>
+      <tr bgcolor="#e8f7fe">
+        <td style="padding-left:10px; border-bottom:1px solid #b6c2c8; line-height:25px;">Extra Details</td>
+        <td style="border-bottom:1px solid #b6c2c8; "><?php echo $extraData; ?></td>
+        <td style="border-bottom:1px solid #b6c2c8; ">&nbsp;</td>
+      </tr>
+      <?php endif; ?>
+      <tr>
+      	<?php if (isset($progressList)) : ?>
+        <td colspan="3" style=" border-bottom:1px solid #b6c2c8;">
+        <table width="0" border="0" cellspacing="0" cellpadding="0">
+          <tr bgcolor="#d3effd">
+            <td width="167" style="font-size:11px; padding-left:10px;"><strong>Server Name </strong></td>
+            <td width="130" style="font-size:11px;"><strong>Progress</strong></td>
+            <td width="133" style="font-size:11px;"><strong>Time Stamp</strong></td>
+            <td width="172" style="font-size:11px;"><strong>Extra Information</strong></td>
+          </tr>
+          <?php foreach ($progressList as $progressRow) : ?>
+          <tr bgcolor="#e8f7fe">
+            <td style="font-size:11px; padding-left:10px;"><?php echo $progressRow['name']; ?></td>
+            <td style="font-size:11px;"><?php echo $progressRow['progress']; ?></td>
+            <td style="font-size:11px;"><?php echo $this->dateFormat($progressRow['timestamp']); ?></td>
+            <td style="font-size:11px;"><?php echo $this->auditExtraData($progressRow['extra']); ?></td>
+          </tr>
+          <?php endforeach; ?>
+        </table></td>
+        <?php endif; ?>
+        </tr>
+      <tr>
+        <td colspan="3" style="padding-top:10px;"></td>
+        </tr>
+  </table>
+    <table width="0" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td width="31"><a href="<?php echo $this->helpLink('audit_trail'); ?>"><img src="http://static.zend.com/topics/help-icon-16x16px.png" alt="Tracking Users in Zend Server 6" border="0"></a></td>
+      <td width="244" align="left" style="padding-top:10px;"><a href="<?php echo $this->helpLink('audit_trail'); ?>">Learn more about Audit Trail</a></td>
+    </tr>
+    <tr>
+      <td width="31"><a href="http://www.zend.com/server/redirect/tracking-user-video"><img src="http://static.zend.com/topics/video-icon-47x52px.png" alt="Tracking Users in Zend Server 6" height="24" border="0"></a></td>
+      <td width="244" align="left" style="padding-top:10px;"><a href="http://www.zend.com/server/redirect/tracking-user-video">Tracking Users in Zend Server 6</a></td>
+    </tr>
+  </table>
+   </td>
+  </tr>
+  <tr>
+  	<td align="left" valign="top" bgcolor="#ffffff" style="font-size: 10px; color: rgb(57, 72, 82); line-height: 12px; font-family: Arial,sans-serif; padding: 30px 10px 10px 10px;">
+  	<a href="<?php echo $baseUrl . '/Settings#audit-trail-settings'; ?>">Click here</a> 
+  	to stop receiving emails from the Audit Trail
+  	</td>

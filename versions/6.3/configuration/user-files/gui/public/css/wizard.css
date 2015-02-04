@@ -1,0 +1,474 @@
+/* Styling of the form before 
+   the FormWizard Transformation */
+/*
+form {
+  width: auto;
+  background: #fff;
+  padding: 10px;
+  border-top: 2px solid #717171;
+  margin-bottom: 3em;
+}
+*/
+.wizard-control-area {
+/* the wizard-control-area shouldn't be 
+   in the page before the FormWizard Invocation
+   (IN THIS EXAMPLE). Let's hide it if it is not
+   there */
+  display: none;
+}
+
+fieldset p {
+  /* margin-top: 2em; */
+}
+
+fieldset {
+  vertical-align: middle;
+  border: 1px solid #e3e3e3;
+  /* margin: 5px 40px; */
+  position: relative;
+  background: #fff;
+  /* padding: 1.5em 0.5em 1em 1em; */
+} 
+
+fieldset h2,
+fieldset h3 {
+  	font-variant: capitalize;
+  	font-size: larger;
+	padding: 10px 0;
+}
+
+fieldset h2 {
+	font-size: 18px;
+}
+
+fieldset h3 {
+	font-size: 14px;
+}
+
+.centered-container {
+  width: 100%;
+  text-align: center;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+#confirmEmail {
+  font-weight: bolder;
+}
+
+/* Styles applied to the form after 
+   the FormWizard transformation */
+
+.wizard {
+  border: 1px solid black;
+  padding: 0;
+  width: auto;
+  width: 600px;
+  height: 320px;
+  position: relative;
+}
+
+#settingsSet {
+	width: 450px;
+	/* margin-bottom: 26px; */
+}
+
+#defineApplicationForm .zend-form-table tr td:first-child {
+	text-align: right;
+	width: 140px;
+	display: inline-block;
+}
+
+#defineApplicationForm .zend-form-table select,
+#defineApplicationForm .zend-form-table input[type="text"] {
+	width: 200px;
+}
+
+.required-field {
+	font-weight: bold;	
+}
+
+.wizard .unwizarded-only {
+  display: none;
+}
+
+.wizard-control-area, 
+.wizard #controlArea {
+  position:absolute;
+  bottom:0;
+  background: url('../images/wizard/vertical-gradient-line.png') top right repeat-x;
+  border: 0;
+  border-top: 1px solid #96a5ac;
+  margin:0;
+  width: 100%;
+  padding: 5px 0;
+  text-align: center;
+  display: block;
+  height: 21px;
+}
+
+.wizard > fieldset {
+  border: 0;
+}
+
+.side-legend {
+ display: none;	
+}
+
+.wizard .side-legend {
+  	float: left;
+  	width: 174px;
+	height: 444px;
+  	display: block;
+  	padding: 0;
+  	margin: 0;
+	background: url('../images/wizard/horizontal-gradient-line.png') top right repeat-y;
+}
+
+.wizard .wizard-page {
+	float: left;
+	width: 465px;
+	padding-left: 18px;
+	padding-right: 0;
+}
+
+.side-legend li {
+  	width: 174px;
+  	height: 23px;
+	margin: 10px 0;
+	position: relative;
+}
+
+.side-legend li h2{
+	font-size: 11px;
+	color: #7e9097;
+	font-weight: bold;
+  	line-height: 25px;
+  	text-indent: 15px;
+}
+
+.side-legend li.disabled h2{
+	color: #b6bfc3;
+}
+
+.wizard .item-selected-arrow {
+	background: url('../images/wizard/blue-triangle-arrow.png') top right no-repeat;
+	height: 23px;
+	width: 9px;
+	position: absolute;
+	top: 0;
+	right: -9px;
+	z-index: 1;
+	display: none;
+}
+
+.wizard .info-icon {
+	background: url('../images/wizard/question-mark-icon-dark.png') top right no-repeat;
+	height: 12px;
+	width: 12px;
+	display: inline-block;
+}
+
+.wizard #deployment-installation-top {
+	width: 353px;
+}
+
+.wizard #deployment-installation-top .application-installation-logo {
+	max-height: 55px;
+	max-width: 100px;
+	float: right;
+}
+
+.wizard #deployment-installation-top table {
+	width: 372px;
+	float: left;
+	margin: 0;
+}
+
+.wizard .item-selected-help {
+	background: url('../images/wizard/question-mark-icon.png') top right no-repeat;
+	height: 12px;
+	width: 12px;
+	position: absolute;
+	top: 5px;
+	right: -1px;
+	z-index: 1;
+	display: none;
+}
+
+.wizard-current-0 #sl0 h2,
+.wizard-current-1 #sl1 h2,
+.wizard-current-2 #sl2 h2,
+.wizard-current-3 #sl3 h2,
+.wizard-current-4 #sl4 h2,
+.wizard-current-5 #sl5 h2,
+.wizard-current-6 #sl6 h2,
+.wizard-current-7 #sl7 h2{
+  	background-color: #80b3c8;
+	color: #fff;
+}
+
+.wizard-current-0 #sl0 .item-selected-arrow,
+.wizard-current-1 #sl1 .item-selected-arrow,
+.wizard-current-2 #sl2 .item-selected-arrow,
+.wizard-current-3 #sl3 .item-selected-arrow, 
+.wizard-current-4 #sl4 .item-selected-arrow,
+.wizard-current-5 #sl5 .item-selected-arrow,
+.wizard-current-6 #sl6 .item-selected-arrow,
+.wizard-current-7 #sl7 .item-selected-arrow {
+	display: block;
+}
+
+.wizard-current-0 #sl0 .item-selected-help,
+.wizard-current-1 #sl1 .item-selected-help,
+.wizard-current-2 #sl2 .item-selected-help,
+.wizard-current-3 #sl3 .item-selected-help, 
+.wizard-current-4 #sl4 .item-selected-help,
+.wizard-current-5 #sl5 .item-selected-help,
+.wizard-current-6 #sl6 .item-selected-help,
+.wizard-current-7 #sl7 .item-selected-help {
+	display: block;
+}
+
+.wizard-current-first button.wizard-control-backward,
+.wizard-current-last button.wizard-control-forward {
+    visibility: hidden;
+	display: none;
+}
+
+#deploymentWizard {
+	width: 671px;
+	height: 474px;
+	border: 1px solid #000;
+}
+
+#defineWizard {
+	width: 671px;
+	height: 474px;
+	border: 1px solid #000;
+}
+
+.wizard-title {
+	height: 24px;
+	font-size: 12px;
+	font-weight: bold;
+	color: #cddce2;
+	background: #074f6d;
+	line-height: 24px;
+	padding-left: 5px;
+}
+
+#wizard-control-forward {
+	float: right;
+	margin-right: 10px;
+}
+
+#wizard-control-backward,
+#wizard-control-submit {
+	margin: 0 3px;
+	float: right;
+}
+
+#wizard-control-submit {
+	display: none;
+}
+
+#wizard-control-cancel {
+	float: left;
+	margin-left: 10px;
+}
+
+.wizard-page .page-wrapper {
+	width: 466px;
+	height: 412px;
+	overflow-x: hidden;
+	overflow-y: auto;
+	padding-right: 5px;
+}
+
+.wizard-page code {
+	word-wrap: break-word;
+}
+
+.wizard-page#licenseAgreementPage dd {
+	margin: 0;
+}
+
+.wizard-page #readmeContent dd {
+	margin-left: 12px;
+	margin-right: 12px;
+}
+.wizard-page #eulaContent, .wizard-page #readmeContent {
+	width: 99%;
+	height: 282px;
+	margin-bottom: 10px;
+}
+
+.wizard-page #accept-terms-label {
+	float: right;
+    text-align: left;
+    width: 444px;
+}
+
+.wizard-page #accept-terms {
+	float: left;
+}
+
+.wizard-page h2,
+.wizard-page h3 {
+	color: #96a5ac;
+}
+
+.wizard-page h2 {
+	font-size: 18px;
+}
+
+.wizard-page h3 {
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.wizard-page p {
+	color: #3b5866;
+	line-height: 16px;
+	font-size: 12px;
+}
+
+.wizard-page #summaryContent {
+	position: relative;
+}
+
+.wizard-page .application-wizard-logo {
+	top: 0px;
+	max-height: 55px;
+	max-width: 100px;
+}
+
+.wizard-page .application-user-params {
+}
+
+.wizard-page .application-user-params dt {
+	display: inline-block;
+	width: 36%;
+	margin: 10px 0 0 0;
+	padding-right: 10px;
+	text-align: right;
+	vertical-align: top;
+	color: #93A3AB;
+	font-size: 13px;
+	font-weight: bold;
+}
+
+.wizard-page .application-user-params dd {
+	display: inline-block;
+	width: 60%;
+	margin: 10px 0 0 0;
+	text-align: left;
+	vertical-align: top;
+}
+
+#defineError {
+	display: block;
+	max-width: 230px;
+	margin: 5px 0;
+	padding: 0;
+	text-align: left;
+	color: red;
+	vertical-align: top;
+}
+
+
+.wizard-page .application-user-params dd .errors {
+	display: block;
+	max-width: 230px;
+	margin: 5px 0;
+	padding: 0;
+	text-align: left;
+	color: red;
+	vertical-align: top;
+}
+
+.wizard-page .application-user-params .description {
+	display: none;
+}
+
+.wizard-page .application-user-params input[type="text"], 
+.wizard-page .application-user-params input[type="password"], 
+.wizard-page .application-user-params select {
+	width: 150px;
+}
+
+.wizard-page .application-user-params input[readonly] {
+	color: gray;
+}
+
+
+#deployment-set-installation table tr td:first-child {
+	width: 100px;
+}
+
+#deployment-set-installation input {
+	width: 220px;
+}
+
+#deployment-set-installation select {
+	width: 150px;
+}
+
+.wizard .section {
+	width: 73px;
+}
+
+#default-server-message, .default-server-message {
+	padding-left: 25px;
+	margin-top: 7px;
+	font-style: italic;
+	background: url('../images/apps-status-warning.png') left 2px no-repeat;	
+}
+/* in the summary and prereq pages */
+.wizard-display-list h2{
+	font-size:16px;
+	color: #96a5ac;
+}
+.wizard-display-list{
+	color: #3b5866;
+}
+
+#defineApplicationForm table {
+	margin-bottom: 0;
+}
+
+#define-wizard-logo-label {
+	color: gray;
+	float: left;
+	margin: 15px 0 0 10px;
+	width: 142px;
+	text-align: right;
+	padding-right: 40px;
+}
+
+#define-wizard-uploader-wrapper input[type="file"] {
+	width: 235px;
+	float: left;
+	margin-top: 12px;
+}
+
+#define-wizard-uploader-wrapper #droppable {
+	margin-top:10px;
+	margin-left:10px;
+	float: left;
+	clear: both;
+	width: 87%;
+}
+
+#defineWizard .wizard-page .page-wrapper {
+	overflow: hidden;
+}
+
+.zend-form-deploy-wizard .error-wrapper ul {
+	margin: 0 0 0 2px;
+	list-style-type: none;
+	padding: 0;
+	font-size: 11px;
+	color: #FF5400;
+}

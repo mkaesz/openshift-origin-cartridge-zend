@@ -1,0 +1,312 @@
+@CHARSET "ISO-8859-1";
+
+.filter_details {
+    background: none repeat scroll 0 0 #E2EFF5;
+    border-bottom: 1px solid #D2D6D7;
+    border-top: 1px solid #D2D6D7;
+}
+
+#filter_details table {
+	margin: 0;
+}
+
+#filter_details table td {
+	padding: 4px 10px;
+}
+
+#filter_details .optionsContainer {
+	max-height: 70px;
+	overflow: auto;
+}
+
+.issue-list-seperator {
+	width: 100%;
+	background: url("../images/issue-details-list-seperator.png") repeat-y scroll right top transparent;
+}
+
+#filter_details table tr td:first-child {
+	width: 100px;
+}
+
+.filterLabel {
+    color: #93A3AB;
+    float: left;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 25px;
+    overflow: hidden;
+    padding: 0 10px;
+    text-align: right;
+    white-space: nowrap;
+    width: 93px;
+}
+
+.filterOption {	
+	/*
+	float: left;
+	padding: 10px;
+	cursor: pointer;
+	text-decoration: underline;
+	
+	display: inline-block;
+    float: left;
+    padding: 3px 10px;
+	*/
+
+	line-height: 15px;
+	padding: 5px;
+	cursor: pointer;
+	padding: 1px 4px 2px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	background-color: #9AC4D8;
+	color: white;
+	white-space: nowrap;
+	display: inline-block;
+	margin: 5px 5px;
+}
+
+.filterOption:hover {
+	background-color: #4CACDA;
+}
+
+.issue-filter-id,
+.audit-filter-id,
+.vhost-filter-id,
+.job-filter-id,
+.job-rule-filter-id {
+	margin-left: 10px;
+	margin-right: 8px;
+}
+
+.filter_details_content ul li {
+    clear: both;
+	padding: 5px 0;
+}
+
+.filter_details_content .searchBox .search {
+	-o-transition: none;
+	-webkit-transition: none;
+	-moz-transition: none;
+	transition: none;
+
+	width: 200px;
+}
+
+#filterBar div.externalFiltersContainer {
+	float: right;
+	height: 16px;
+	margin-top: 2px;
+	border: 0px;
+}
+
+#filterBar div.selectedFiltersButtons {
+	float: left;
+	margin-top: 5px;
+}
+
+#filterBar div.divSelectFiltersControls {
+	float: left;
+	margin-top: 4px;
+	margin-left: 4px;
+}
+
+#filterBar {
+    background: none repeat scroll 0 0 #EDEDED;
+    height: 37px;
+	font-size: 12px;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.userSelectedFilters {
+    background: none repeat scroll 0 0 #E2EFF5;
+    border-bottom: 1px solid #D2D6D7;
+    border-top: 1px solid #D2D6D7;
+	padding: 10px;
+}
+
+.filter_details_content {
+	background: none repeat scroll 0 0 #E2EFF5;
+	border-top: 1px solid #C1CACE;
+}
+
+.selectedFilter {
+	padding: 5px;
+	cursor: pointer;
+	padding: 1px 4px 2px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	background-color: #9AC4D8;
+	color: white;
+	white-space: nowrap;
+	display: inline-block;
+	margin: 5px 5px;
+}
+
+.selectedFilter:hover {
+	background-color: #4CACDA;
+}
+
+.filter_details_content ul {
+	margin: 0;
+    padding: 0;
+}
+
+.filter_details_content .searchBox {
+	float: left;
+}
+
+table.selectedFiltersBox {
+	width: 100%;
+}
+
+.selectedFiltersList {
+	line-height: 15px;
+	min-height: 33px;
+	padding-top: inherit;
+}
+
+.search {
+	margin: 5px;
+}
+
+.selectedFiltersLabel {
+	margin-left: 50px;
+    color: #93A3AB;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 31px;
+    overflow: hidden;
+    white-space: nowrap;
+	line-height: 35px;
+}
+
+.externalFilterLabel {
+	color: #93A3AB;
+    font-size: 12px;
+    font-weight: bold;
+    overflow: hidden;
+    white-space: nowrap;
+	float: left;
+}
+
+.selectedFiltersBar {
+	background: none repeat scroll 0 0 #E2EFF5;
+	border-top: 1px solid #C1CACE;
+}
+
+.selectedFiltersBox {
+	display: inline-block;
+ 	min-height: 43px;
+}
+
+.tooltip {
+	margin-top:4px;
+}
+
+.datePicker {
+	width: 113px;
+	font-family: Arial,Helvetica,sans-serif;
+}
+
+.externalFiltersContainer {
+	border: 1px solid #ABB0B3;
+	padding: 3px;
+}
+
+.externalFilters {
+	padding: 0 6px;
+	margin: 1px;
+	height: 15px;
+}
+
+.externalFiltersInterface input,
+.externalFiltersInterface span  {
+	margin-right: 10px;
+}
+
+.timeRangeTitle {
+	padding: 10px 0px;
+}
+
+.linkable {
+	cursor: pointer;
+}
+
+.selectedFiltersButtons button, .selectedFiltersButtons input {
+	margin-left: 5px;
+}
+
+.clearFilters {
+    background: url('../images/clear-button.png') 0 0 no-repeat;
+	cursor: pointer;
+ 	float: left;
+    height: 22px;
+    margin: 5px 2px;
+    width: 32px;
+}
+
+
+.clearFilters:hover {
+	background: url('../images/clear-button.png') -64px 0
+}
+
+.clearFilters:active {
+	background: url('../images/clear-button.png') -32px 0
+}
+
+.optionsContainer span {
+	line-height: 24px;
+	padding-left: 10px;
+}
+
+.noFiltersSelectedText {
+	color: #404040;
+    font-weight: normal;
+}
+
+.showFilterDetails {
+	background-image: url("../images/icons/show-details-icon.gif");
+	background-position: right center;
+    background-repeat: no-repeat;
+	padding-right: 12px;
+}
+
+.hideFilterDetails {
+	background-image: url("../images/icons/hide-details-icon.gif");
+	background-position: right center;
+    background-repeat: no-repeat;
+	padding-right: 12px;
+}
+
+#timeRangeFilter label {
+	font-weight: bold;
+	color: #aaa;
+	margin: 0 6px 0 10px;
+}
+
+#timeRangeFilter span {
+	display: inline-block;
+}
+
+.timeRangeCalendarIcon {
+	display: inline-block;
+	background: url("../images/btnCalendar.png") top right no-repeat;
+	height: 15px;
+	width: 20px;
+	margin-top: 2px;
+	margin-left: 4px;
+	float: right;
+	cursor: pointer;
+}
+
+.timeRangeCalendarIcon:hover {
+	background-position: right -15px;
+}
+
+.datepicker_vista {
+	z-index:1000;
+}

@@ -1,0 +1,6 @@
+#!/bin/bash -eu
+
+source $OPENSHIFT_CARTRIDGE_SDK_BASH
+
+# Call the version specific control script
+exec ${OPENSHIFT_ZEND_DIR}versions/$OPENSHIFT_ZEND_VERSION/bin/control $@

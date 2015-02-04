@@ -1,0 +1,59 @@
+.simple-modal {
+	border: 1px solid #000;
+	width: auto;
+	min-width: 200px;
+}
+
+.simple-modal .simple-modal-header {
+	height: 24px;
+	font-size: 12px;
+	font-weight: bold;
+	color: #CDDCE2;
+	background: #074F6D;
+	line-height: 24px;
+	padding: 0 0 0 5px;
+}
+
+.simple-modal .simple-modal-body {
+	min-height: 200px;
+	/*
+	background: url('../images/wizard/horizontal-gradient-line.png') top left repeat-y;
+	padding-left: 188px;
+	*/
+}
+
+.simple-modal .simple-modal-body h2 {
+	font-size: 18px;
+}
+
+.simple-modal .simple-modal-footer {
+	position:absolute;
+  	bottom:0;
+  	background: url('../images/wizard/vertical-gradient-line.png') top right repeat-x;
+  	border: 0;
+  	border-top: 1px solid #96a5ac;
+  	margin:0;
+  	width: 100%;
+  	padding: 5px 0;
+  	text-align: center;
+  	display: block;
+  	height: 21px;
+
+	-webkit-border-radius: 0 0 0 0;
+    -moz-border-radius: 0 0 0 0;
+    border-radius: 0 0 0 0;
+}
+
+.simple-modal .simple-modal-footer .btn {
+	margin: 0 10px;
+	float: left;
+}
+
+.simple-modal .simple-modal-footer .btn.primary {
+	float: right;
+}
+
+.simple-modal .disabled {
+	color: gray;
+	cursor: default;
+}

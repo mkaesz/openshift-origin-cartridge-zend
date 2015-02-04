@@ -1,0 +1,1 @@
+/usr/local/zend/gui/init_application_config.php

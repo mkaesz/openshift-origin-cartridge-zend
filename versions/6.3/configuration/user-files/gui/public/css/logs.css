@@ -1,0 +1,171 @@
+@CHARSET "UTF-8";
+
+
+.log_display {
+	padding: 10px 0 10px 10px;
+}
+
+.log_display {
+	padding-right: 15px;
+	margin: 0 15px 0 15px;
+}
+
+.top-bar {
+    height: 31px;
+    line-height: 31px;
+    padding: 0 10px;
+	vertical-align: middle;
+}
+
+.side-bar {
+	width: 200px;
+}
+
+.content_box {
+	background: #e2eff5;
+}
+
+.content_box h2 {
+	background: #E2EFF5;
+	direction: ltr;
+	border-bottom: 1px solid #BFBFBF;
+	font-size: 13px;
+	font-weight: normal;
+	color: #666;
+	display: block;
+	padding: 12px 5px 12px 17px;
+}
+
+.content_box h2.single-server {
+	font-weight: bold;
+	color: #225368;
+	font-size: 14px;
+}
+
+.content_boxul {
+	list-style-type: none;
+}
+
+.content_box .accordion h3{
+	padding-left: 10px;
+	cursor: pointer;
+}
+
+.content_box .accordion h3.selected {
+	cursor: default;
+}
+
+.content_box .accordion ul {
+	padding-left: 25px;
+	margin-top: 6px;
+}
+
+ul.properties_list {
+	display: inline;
+	vertical-align: middle;
+	color: #aaaaaa;
+}
+
+ul.properties_list li span {
+	font-weight: bold;
+	color: #666;
+}
+
+ul.properties_list li#file_last_update span {
+	font-weight: normal;
+	color: #aaaaaa;
+}
+
+ul.properties_list li#file_name {
+	font-weight: bold;
+	font-size: 18px;
+	color: #666;
+}
+
+ul.properties_list li:FIRST-CHILD {
+	border-left: 0;
+}
+
+ul.properties_list li {
+	line-height: 12px;
+	padding: 0 7px 1px 7px;
+	border-left: 1px solid #AAAAAA;
+}
+
+#toggler {
+	width: 160px;
+	margin-top: 5px;
+}
+
+#files_list_wrapper {
+	direction: rtl;
+	width: 200px;
+	overflow: auto;
+	padding-right: 20px;
+}
+
+#files_list {
+	background: #e2eff5;
+	direction: ltr;
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+#files_list li {
+	position: relative;
+	direction: ltr;
+	display: block;
+}
+
+#files_list li a {
+	text-decoration: none;
+	cursor: pointer;
+	height: 26px;
+	line-height: 26px;
+	color: #666666;
+	padding-left: 17px;
+	position: relative;
+	display: block;
+}
+
+#files_list li:hover,
+#files_list li.selected {
+	background: #88A2AD;
+}
+
+#files_list li:hover a,
+#files_list li.selected a {
+	color: #fff;
+	font-weight: bold;
+	overflow: hidden;
+	margin-right: 10px;
+}
+
+.server-info-active-arrow {
+	background: url("../images/server-info-arrow.png") top right no-repeat;
+	height: 26px;
+	width: 11px;
+	position: absolute;
+	display: none;
+	top: 0;
+	right: -11px;
+}
+
+#files_list li:hover > .server-info-active-arrow,
+#files_list li.selected > .server-info-active-arrow {
+	display: block;
+}
+
+#tool_bar {
+	width: 490px;
+}
+
+textarea {
+	border: 0px;
+	background: #f2f6f7;
+}
+
+#search_log_display_wrapper {
+	float: left;
+}

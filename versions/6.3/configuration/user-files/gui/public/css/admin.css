@@ -1,0 +1,368 @@
+@CHARSET "UTF-8";
+
+#ldap-account_canonical_form {
+	width: 186px;
+}
+
+#ldap-host {
+	width: 102px;
+}
+
+.simple-modal-toast.message-box {
+	clear: right;
+	margin: 10px 10px 0 188px;
+}
+
+#encryption-selector label {
+	display: inline-block;
+}
+
+table#users_list_table {
+	width: 400px;
+}
+
+table.tableDescContent tr td label {
+	display: block;
+}
+
+#change_password_form_box {
+	display: none;
+}
+
+.simple-modal-header h3 {
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 14px;
+}
+
+#ChangePasswordForm input[type="password"] {
+	width: 150px;
+}
+
+#ChangePasswordForm label {
+	line-height: 22px;
+	float: right;
+}
+
+#ChangePasswordForm td {
+	padding: 20px;
+}
+
+#ChangePasswordForm table {
+	margin-top: 30px;
+}
+
+div#ldap_properties_enable_box label {
+	display: block;
+}
+
+.clear-content {
+	margin: 25px;
+}
+
+.clear-content .content{
+	margin: 12px;
+}
+
+.radio_select_option_holder h2{
+	margin: 10px 0;
+	
+}
+
+.radio_select_option_holder h2 label{
+	line-height: 20px;
+	font-size: 12pt;
+}
+
+.radio_select_option_holder label,
+.radio_select_option_holder label input {
+	cursor: pointer;
+}
+
+.radio_select_option_holder label input {
+	vertical-align: middle;
+	margin-right: 3px;
+}
+.zend_form dd, .zend_form dt {
+	margin-top: 10px;
+}
+
+dl.zend_form {
+	margin: 4px 0 4px 0;
+}
+
+#queryCredentials .zend_form dd,
+#queryCredentials .zend_form dt {
+	margin-top: 4px;
+}
+
+.zend_form dd, .zend_form dt {
+	margin-top: 10px;
+}
+
+.zend_form dd {
+	margin-left: 40px;
+}
+
+.zend_form em {
+	display: block;
+	margin: 4px 0 0 2px;
+}
+
+.zend_form dd label input {
+	margin-right: 3px;
+}
+
+.zend_form dt label{
+	display: block;
+	line-height: 20px;
+}
+
+fieldset {
+	width: 500px;
+	margin: 12px;
+}
+
+form#groups_mapping_form fieldset {
+	margin-bottom: 10px;
+}
+
+div#submit_formlet {
+	margin-top: 6px;
+}
+
+#authentication_source_ui_extended {
+	overflow-y: auto;
+	height: 300px;
+}
+
+.wizard {
+	height: 420px;
+}
+
+.wizard fieldset.wizard-page.last-wizard-page .page-wrapper {
+	height: 371px;
+}
+
+.wizard fieldset.wizard-page {
+	width: 384px;
+}
+.wizard fieldset.wizard-page div.page-wrapper {
+	width: 370px;
+	height: inherit;
+}
+
+.wizard fieldset.page-wrapper, .wizard ul.side-legend {
+	height: 400px;
+}
+
+.radio_select_option_holder {
+	padding-left: 3px;
+}
+
+#zend-monitor input[type="radio"] {
+	margin-right: 3px;
+}
+
+.settings-wrapper {
+	margin: 20px 15px;
+	padding-left: 55px;
+	padding-top: 11px;
+}
+
+.settings-wrapper h2,
+.settings-wrapper h3{
+	font-size: 18px;
+	font-weight: normal;
+	color: #245366;
+}
+
+.settings-wrapper h3 {
+	font-size: 14px;
+	font-weight: bold;
+	margin: 10px 0;
+}
+
+.settings-wrapper .settings-desc {
+	width: 600px;
+	margin: 10px 0;
+	color: gray;
+}
+
+.settings-wrapper label {
+	font-size: 12px;
+	color: #000;
+}
+
+.settings-wrapper input {
+	color: #000;
+	font-weight: normal;
+	font-size: 12px;
+}
+
+.settings-wrapper iframe {
+	width:600px;
+	border:0px;
+	height: 65px;
+	overflow:hidden;
+}
+
+.settings-wrapper td {
+	padding-left: 0;
+}
+
+.settings-wrapper .settings-row-description td {
+	padding-top: 0;
+	color: gray;
+	padding-bottom: 20px;
+}
+
+.settings-wrapper input[type="submit"] {
+	background: #78b6cf;
+	border: 0px;
+	padding: 5px 10px;
+	color: #fff;
+}
+
+.settings-wrapper .settings-error {
+	display: inline-block;
+	color: red;
+	margin-left: 10px;
+}
+
+.settings-wrapper .settings-import-export .zend-form-table-description {
+	margin: 10px 0;
+}
+
+.settings-wrapper tr td label {
+	margin-left: 20px;
+}
+
+.settings-wrapper tr td label:first-child {
+	margin-left: 0;
+}
+
+.settings-wrapper tr td input[type="radio"] {
+	margin-right: 2px;
+}
+
+.settings-wrapper#general-settings {
+	background: url("../images/settings/general-settings.png") left top no-repeat;
+}
+
+.settings-wrapper#notification-center-settings {
+	background: url("../images/settings/notification-center.png") left top no-repeat;
+}
+
+.settings-wrapper#audit-trail-settings {
+	background: url("../images/settings/audit-trail.png") left top no-repeat;
+}
+
+.settings-wrapper#mail-settings {
+	background: url("../images/settings/mail-settings.png") left top no-repeat;
+}
+
+.settings-wrapper#test-settings {
+	background: url("../images/settings/mail-settings.png") left top no-repeat;
+}
+
+.settings-wrapper#export-import-settings {
+	background: url("../images/settings/export-import.png") left top no-repeat;
+}
+
+.settings-wrapper#webserver-errors-settings {
+	background: url("../images/settings/error-reporting.png") left top no-repeat;
+}
+
+.settings-wrapper#webserver-graceful-restart {
+	background: url("../images/settings/sync-restar-icon.png") left top no-repeat;
+}
+
+.settings-wrapper#restart-settings {
+	background: url("../images/settings/restart-strategy.png") left top no-repeat;
+}
+.settings-wrapper#license-settings {
+	padding: 0;
+	margin-left: 40px;
+}
+
+.settings-wrapper#license-settings tr td label {
+	width: 100px;
+	display: inline-block;
+	vertical-align: top;
+}
+
+#license-status-box {
+	display: inline-block
+}
+
+#license-status-box .toast {
+	box-shadow: none;
+	background-color: transparent;
+	background-position: top left;
+	border: 0px;
+	padding: 0 0 0 31px;
+	position: relative;
+	display: inline-block;
+	left: 0;
+	top: 0;
+	margin: 0;
+	z-index: 3;
+}
+
+.settings-wrapper .restart-server-note {
+	margin-top: 0;
+}
+
+.settings-wrapper .global-restart-server-note {
+	margin-top: 15px;
+}
+
+.zend-form-table tr td:first-child {
+	width: 260px;
+}
+
+/* overwrite side-bar defaults */
+#files_list li:hover a,
+#files_list li.selected a {
+	font-weight: normal;
+}
+
+.content_box, 
+#files_list,
+.content_box h2.single-server {
+	background: url("../images/grain.png") left top repeat;
+}
+
+#log_display {
+	/* overflow: auto; */
+}
+
+.log_display {
+	margin: 0 0 0 15px;
+}
+
+/* end overwrite */
+
+.settings-section {
+	display: none;
+}
+
+#content_container {
+	position: relative;
+}
+
+label input {
+	vertical-align: -2px;
+}
+
+.side-bar {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.progressExtraData pre {
+	margin: 0;
+}

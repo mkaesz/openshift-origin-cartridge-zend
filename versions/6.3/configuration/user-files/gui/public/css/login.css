@@ -1,0 +1,120 @@
+body {
+	background-color: #074f6d;
+	color: #FFFFFF;
+}
+
+.helpLink {
+	color: #8296A4;
+	line-height: 32px;
+	vertical-align: top;
+}
+
+#login-top .logo-placeholder {
+	top: 0;
+}
+
+.system_details li {
+	line-height: 16px;
+}
+
+#login-form-container {
+    margin: 100px auto 0;
+    padding: 52px 0 0 0;
+    width: 602px;
+	height: 312px;
+	background: url("../images/login-form-bg.png") top left no-repeat;
+	position: relative;
+}
+
+#login-form-container #login-content {
+	position: absolute;
+	top: 106px;
+	left: 70px;
+}
+
+#login-form-container #login-content form {
+	position: absolute;
+	top: 54px;
+	left: 85px;
+}
+
+#login-form-container #login-content form input[type="text"],
+#login-form-container #login-content form input[type="password"] {
+	width: 197px;
+}
+
+#login-form-container #login-top {
+    height: 64px;
+}
+
+#login-form-container #login-bottom {
+    background: url("../images/frame-bottom.gif") repeat scroll 0 0 transparent;
+    height: 14px;
+}
+
+#login-form-container .login-copyright {
+    color: #8296A4;
+    font-size: 9px;
+    padding: 8px 0 0 24px;
+    text-transform: uppercase;
+}
+
+.zend_form input {
+	clear: both;
+	margin: 5px 0;
+}
+
+.zend_form .errors {
+	float: left;
+	margin: 5px 0;
+}
+
+.login-meta {
+	width: 408px;
+	margin: 0 auto;
+	color: #3e7e99;
+	font-size: 12px;
+}
+
+.login-meta ul {
+	padding-left: 30px;
+}
+
+.login-copyright {
+	line-height: 30px;
+}
+
+#error{
+	color: #ff3f00;
+	font-size: 12px;
+	position: absolute;
+	top: 30px;
+	left: 123px;
+	width: 250px;	
+}
+
+.notice{
+	color: #FF5400;
+	font-size: 12px;
+	position: absolute;
+	top: 30px;
+	left: 123px;
+	width: 250px;	
+}
+
+.helpLink {
+	color: #074f6d;
+	font-size: 12px;
+	margin-left: 5px;
+}
+
+.zend_form input[type="submit"] {
+	width: 78px;
+	height: 20px;
+	background: url("../images/login-form-button.png") top left no-repeat;
+	border: 0px;
+}
+
+input.invalid {
+	border: 2px solid red;
+}

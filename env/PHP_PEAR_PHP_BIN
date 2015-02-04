@@ -1,0 +1,1 @@
+<%= ENV['OPENSHIFT_ZEND_DIR'] %>/php-5.5/bin/php

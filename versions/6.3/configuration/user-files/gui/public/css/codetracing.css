@@ -1,0 +1,26 @@
+@CHARSET "UTF-8";
+
+.general-details-top {
+	height: 95px;
+}
+
+.general-details-top ul li {
+	height: 48px;
+}
+
+#code_trace_ui_container {
+	margin-top: 10px;
+	padding: 3px;
+}
+
+.create-codetrace-part {
+	margin-left:10px;
+}
+
+.create-codetrace-part:first-child {
+	margin-left:0;
+}
+
+#code-trace-url {
+	width:750px;
+}

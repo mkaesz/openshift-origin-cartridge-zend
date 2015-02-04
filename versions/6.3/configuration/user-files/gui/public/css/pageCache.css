@@ -1,0 +1,173 @@
+@CHARSET "ISO-8859-1";
+
+#rule-general-details {
+	background: #e1eff2; 
+	height: 130px; 
+	border-top: 1px solid #c0cacc; 
+	border-bottom: 1px solid #c0cacc;
+	padding: 10px;
+}
+
+.flat-list li {
+	float:left;
+}
+
+.condition-panel {
+    background: none repeat scroll 0 0 #E2EFF5;
+ 	border-radius: 10px 10px 10px 10px;
+	padding: 20px 20px 20px 20px;
+	width: 700px;
+}
+
+.condition-scheme {
+    color: #355968;
+    font-size: 11px;
+    height: auto;
+    padding: 3px;
+    width: 100px;
+}
+
+#condition-count {
+	display: inline-block;
+	background: none repeat scroll 0 0 lightgray;
+    border-radius: 30px 30px 30px 30px;
+    color: black;
+    font-size: 11px;
+    height: 16px;
+    line-height: 17px;
+    margin-right: 13px;
+    margin-top: -2px;
+    width: 16px;
+	text-align: center;
+}
+
+#rule-name {
+	width: 193px;	
+}
+
+.removeCondition {
+	color: red;
+}
+
+table .conditionsTable {
+	width: auto;
+}
+
+table .splitTable {
+	width: auto;
+}
+
+table .conditionsUrl {
+	width: auto;
+}
+
+.removeCondition {
+	cursor: pointer;
+}
+
+ul .radio-list-cache {
+	list-style-type: none;
+	margin-top: 5px;
+	padding: 0;
+	display: inline-block;
+}
+
+li .radio-list-cache {
+	display: inline-block;
+	background: url('../images/radiobutton_off.png') top left no-repeat;	
+}
+
+.radio-list-cache li:hover {
+	cursor: pointer;
+}
+
+.radio-list-cache li.active {
+	background: url('../images/radiobutton_on.png') top left no-repeat;	
+}
+
+.split-container,
+.conditions_container {
+	width: 550px;
+	margin-left: 20px;
+	margin-top: 20px;
+}
+
+.conditions_container {
+	margin-left: 20px;
+	margin-top: 20px;
+}
+
+.conditionsUrl table th, table td {
+    line-height: 18px;
+    padding: 5px;
+}
+
+.general-cache-details-top {
+	height: 140px;
+	background: #e2eff5;
+	border-top: 1px solid #d2d6d7;
+	border-bottom: 1px solid #d2d6d7;
+}
+
+.ggeneral-cache-details-top ul {
+	list-style-type: none;
+}
+
+.general-cache-details-top ul li {
+	display: inline-block;
+	width: 24%;
+	height: 90px;
+	background: url('../images/issue-details-list-seperator.png') right top repeat-y;
+}
+
+.general-cache-details-top tr td:first-child {
+    color: #93A3AB;
+    font-size: 12px;
+    font-weight: bold;
+    overflow: hidden;
+    padding-right: 10px;
+    text-align: right;
+    white-space: nowrap;
+}
+
+.general-cache-details-top select {
+	width: 200px;
+}
+
+.general-cache-details-top input[type="text"] {
+	width: auto;
+}
+.general-cache-details-top h2 {
+	font-size: 14px;
+    margin-left: 10px;
+	margin-top: 5px;
+}
+
+.split-condition-panel {
+	background: none repeat scroll 0 0 #E2EFF5;
+ 	border-radius: 10px 10px 10px 10px;
+	padding: 20px 20px 20px 20px;
+	width: 700px;
+	position: relative;
+}
+
+.hidden {
+	display: none;
+}
+
+div#content-lock {
+    background-color: white;
+	width: 100%;
+	height:100%;
+    left: 0;
+    opacity: 0.6;
+    position: absolute;
+    right: 16px;
+    top: 0;
+    z-index: 888;
+}
+
+#tabsWrapper {
+	margin: 10px 0px;
+	overflow: hidden;
+}

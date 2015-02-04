@@ -1,0 +1,51 @@
+@CHARSET "UTF-8";
+
+.box-wrapper {
+	margin: 20px;
+}
+
+.box-header {
+	background-color: #084f6d;
+	height: 30px;
+	padding: 0 10px 0 10px;
+}
+
+.box-header h1 {
+	color: white;
+	line-height: 30px;
+}
+
+.box-body {
+	border: 1px solid #cedce2;
+	padding: 20px 10px 20px 40px;
+	background: url("../images/apps-status-warning.png") no-repeat scroll 13px 18px;
+}
+
+ul.vertical-list span {
+	display: block;
+	margin-bottom:10px;
+}
+
+ul.vertical-list li {
+	margin-bottom:7px;
+}
+
+ul.vertical-list {
+	list-style-type: disc;
+	list-style-position: inside;
+	padding: 0;
+}
+
+.more-information .display-box {
+	border: 1px solid #cedce2;
+	overflow: scroll;
+	padding: 12px;
+	margin-top: 13px;
+}
+.more-information-header {
+	display:inline;
+	background: url("../images/arrow-opened.gif") no-repeat scroll right 2px;
+	cursor: pointer;
+	color: #084f6d;
+	padding-right: 17px;
+}

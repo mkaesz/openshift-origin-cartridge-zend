@@ -1,0 +1,4 @@
+zend_wd.tmp_dir=<%= ENV['OPENSHIFT_ZEND_DIR'] %>php-5.5/tmp
+zend_wd.process.scd=<%= ENV['OPENSHIFT_ZEND_DIR'] %>php-5.5/bin/scd -p <%= ENV['OPENSHIFT_ZEND_DIR'] %>php-5.5/etc/scd.ini -e
+zend_wd.env.scd=EVENT_NODEVPOLL=yes
+zend_wd.env.scd=EVENT_NOKQUEUE=yes

@@ -1,0 +1,64 @@
+@CHARSET "UTF-8";
+
+div[class^="spinner"] {
+	position: relative;
+	opacity: 0.9;
+	filter: alpha(opacity=90);
+	-ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=90);
+	z-index: 999;
+	background: #fff;
+}
+
+div[class^="spinner"] .spinner-msg {
+	text-align: center;
+	font-weight: bold;
+}
+
+.spinner .spinner-img {
+	position: relative;
+	right:45%;
+	top:2px;
+	background: url(/ZendServer/images/preload-16.gif) left top no-repeat;
+	width: 16px;
+	height: 16px;
+}
+
+.spinner-large .spinner-img {
+	background: url(/ZendServer/images/preload-48.gif) left top no-repeat;
+	width: 48px;
+	height: 48px;
+	margin: 3px auto;
+}
+
+/* High charts spinner */
+.highcharts-loading span {
+	background: url(/ZendServer/images/preload-48.gif) left top no-repeat;
+    height: 48px;
+    width: 48px;
+    display: block;
+	margin: 10px auto;
+}
+
+/* map charts spinner */
+.map-loading {
+	position: absolute; 
+	background-color: white; 
+	opacity: 0.5; 
+	text-align: center; 
+	left: 0; 
+	top: 0; 
+	width: 100%; 
+	height: 100%; 
+	z-index: 10;
+}
+
+.map-loading span {
+	background: url(/ZendServer/images/preload-48.gif) left top no-repeat;
+    height: 48px;
+    width: 48px;
+    display: block;
+	margin: 20px auto;
+	font-weight: bold; 
+	position: relative; 
+	top: 1em;
+}

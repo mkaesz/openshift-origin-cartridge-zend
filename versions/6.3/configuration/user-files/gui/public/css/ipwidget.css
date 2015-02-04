@@ -1,0 +1,6 @@
+@CHARSET "UTF-8";
+
+.ipwidget_fieldset .ipwidget_field {
+	width: 30px;
+	text-align: center;
+}

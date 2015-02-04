@@ -1,0 +1,19 @@
+@CHARSET "ISO-8859-1";
+
+#addWebApiKey dd {
+	margin: 4px 0;
+}
+
+#addWebApiKey input[type="text"],
+#addWebApiKey input[type="password"] {
+	width: 130px;
+}
+
+#addWebApiKey select {
+	width: 140px;
+}
+
+fieldset {
+	width: 600px;
+	margin: 12px;
+}

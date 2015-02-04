@@ -1,0 +1,74 @@
+---
+Name: zend
+Cartridge-Short-Name: ZEND
+Display-Name: Zend Server
+Description: A PHP server by Zend for applications that require performance, reliability
+  and security. Zend Server combined with Zend Studio offers code optimization, debugging,
+  and code assist.
+Version: '6.3'
+Versions:
+- '6.3'
+License: Commercial
+License-Url: http://static.zend.com/topics/Zend-License-EULA-2010-09-2.pdf
+Vendor: Zend
+Cartridge-Version: 1.0.0
+Compatible-Versions:
+- 1.0.0
+Cartridge-Vendor: kde
+Categories:
+- service
+- php
+- web_framework
+Website: http://www.zend.com
+Help-Topics:
+  Developer Center: https://openshift.redhat.com/community/developers
+Publishes:
+  get-php-ini:
+    Type: FILESYSTEM:php-ini
+  publish-http-url:
+    Type: NET_TCP:httpd-proxy-info
+  publish-gear-endpoint:
+    Type: NET_TCP:gear-endpoint-info
+Subscribes:
+  set-env:
+    Type: ENV:*
+    Required: false
+  set-doc-url:
+    Type: STRING:urlpath
+    Required: false
+Scaling:
+  Min: 1
+  Max: -1
+Version-Overrides:
+  '6.3':
+    Display-Name: PHP 5.5 with Zend Server 6.3
+    Provides:
+    - zend-6.3
+    - zend
+    Endpoints:
+    - Private-IP-Name: IP
+      Private-Port-Name: PORT
+      Private-Port: 8080
+      Public-Port-Name: PROXY_PORT
+      Options:
+        primary: true
+      Mappings:
+      - Frontend: ''
+        Backend: ''
+      - Frontend: /health
+        Backend: ''
+        Options:
+          health: true
+    - Private-IP-Name: IP
+      Private-Port-Name: CONSOLE_PORT
+      Private-Port: 16081
+      Public-Port-Name: PROXY_CONSOLE_PORT
+      Protocols:
+      - http
+      - ws
+      Mappings:
+      - Frontend: /ZendServer
+        Backend: /ZendServer
+    - Private-IP-Name: IP
+      Private-Port-Name: ZENDSERVER_PORT
+      Private-Port: 16083

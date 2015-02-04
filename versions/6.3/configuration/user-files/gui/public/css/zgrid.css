@@ -1,0 +1,502 @@
+table.zgrid {
+	table-layout: fixed;
+}
+
+.zgrid thead,
+.zgrid thead tr {
+	background: url('../images/grid/gradient-menu-line.png') left repeat-x;
+}
+
+.zgrid tr.odd td,
+.zgrid tr.even td {
+	padding-right: 0;
+	padding-top: 0;
+	padding-bottom: 0;
+	height: 33px;
+	line-height: 33px;
+}
+
+.zgrid_ellipsis {
+	width: 100%;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	display: inline-block;
+	line-height: 33px;
+	float: left;
+	height: 31px;
+}
+
+.zgrid_btn {
+	cursor: pointer;	
+}
+
+.zgrid_btn.expand{
+	background: url('../images/expand-button.png') 0 0 no-repeat;
+}
+
+.zgrid_btn.expand:hover {
+	background: url('../images/expand-button.png') -64px 0 no-repeat;
+}
+
+.zgrid_btn.expand:active {
+	background: url('../images/expand-button.png') -32px 0 no-repeat;
+}
+
+.zgrid_btn.checkUpdate {
+	background: url('../images/apps-refresh-button-all.png') 0 0 no-repeat;
+}
+
+.zgrid_btn.checkUpdate:hover {
+	background: url('../images/apps-refresh-button-all.png') -64px 0 no-repeat;
+}
+
+.zgrid_btn.checkUpdate:active {
+	background: url('../images/apps-refresh-button-all.png') -32px 0 no-repeat;
+}
+
+.zgrid_btn.reload {
+	background: url('../images/apps-refresh-button-all.png') 0 0 no-repeat;
+}
+
+.zgrid_btn.reload:hover {
+	background: url('../images/apps-refresh-button-all.png') -64px 0 no-repeat;
+}
+
+.zgrid_btn.reload:active {
+	background: url('../images/apps-refresh-button-all.png') -32px 0 no-repeat;
+}
+
+.zgrid_btn.reload.disabled {
+	display: none;
+}
+
+.zgrid_btn.update {
+	background: url('../images/upload-button-all.png') 0 0 no-repeat;
+}
+
+.zgrid_btn.update:hover {
+	background: url('../images/upload-button-all.png') -64px 0 no-repeat;
+}
+
+.zgrid_btn.update:active {
+	background: url('../images/upload-button-all.png') -32px 0 no-repeat;
+}
+
+.zgrid_btn.update.disabled {
+	display: none;
+}
+
+.zgrid_btn.runNow {
+	background: url('../images/run-now-button-all.png') 0 0 no-repeat;
+}
+
+.zgrid_btn.runNow:hover {
+	background: url('../images/run-now-button-all.png') -64px 0 no-repeat;
+}
+
+.zgrid_btn.runNow:active {
+	background: url('../images/run-now-button-all.png') -32px 0 no-repeat;
+}
+
+.zgrid_btn.runNow.disabled {
+	display: none;
+}
+
+.zgrid_btn.rollback {
+	background: url('../images/apps-rollback-button-all.png') 0 0 no-repeat;
+}
+
+.zgrid_btn.rollback:hover {
+	background: url('../images/apps-rollback-button-all.png') -64px 0
+		no-repeat;
+}
+
+.zgrid_btn.rollback:active {
+	background: url('../images/apps-rollback-button-all.png') -32px 0
+		no-repeat;
+}
+
+.zgrid_btn.rollback.disabled {
+	display: none;
+}
+
+.zgrid_btn.redeploy {
+	background: url('../images/apps-redeploy-button-all.png') 0 0 no-repeat;
+}
+
+.zgrid_btn.redeploy:hover {
+	background: url('../images/apps-redeploy-button-all.png') -64px 0
+		no-repeat;
+}
+
+.zgrid_btn.redeploy:active {
+	background: url('../images/apps-redeploy-button-all.png') -32px 0
+		no-repeat;
+}
+
+.zgrid_btn.redeploy.disabled {
+	display: none;
+}
+
+.zgrid_btn.default {
+	background: url('../images/set-default-button-all.png') 0 0 no-repeat;
+}
+
+.zgrid_btn.default:hover {
+	background: url('../images/set-default-button-all.png') -64px 0
+		no-repeat;
+}
+
+.zgrid_btn.default:active {
+	background: url('../images/set-default-button-all.png') -32px 0
+		no-repeat;
+}
+
+.zgrid_btn.default.disabled {
+	display: none;
+}
+
+.zgrid_btn.delete {
+	background: url('../images/apps-delete-button-all.png') 0 0 no-repeat;
+}
+.zgrid_btn.delete.disabled {
+	display: none;
+}
+
+.zgrid_btn.revert {
+	background: url('../images/apps-rollback-button-all.png') 0 0 no-repeat;
+}
+
+.zgrid_btn.delete:hover {
+	background: url('../images/apps-delete-button-all.png') -64px 0
+		no-repeat;
+}
+
+.zgrid_btn.delete:active {
+	background: url('../images/apps-delete-button-all.png') -32px 0
+		no-repeat;
+}
+
+.zgrid_btn.remove {
+	background: url('../images/apps-delete-button-all.png') 0 0 no-repeat;
+}
+
+.zgrid_btn.remove:hover {
+	background: url('../images/apps-delete-button-all.png') -64px 0
+		no-repeat;
+}
+
+.zgrid_btn.remove:active {
+	background: url('../images/apps-delete-button-all.png') -32px 0
+		no-repeat;
+}
+
+.zgrid_btn.clean {
+	background: url('../images/clean-button.png') 0 0 no-repeat;
+}
+
+.zgrid_btn.clean:hover {
+	background: url('../images/clean-button.png') -64px 0
+		no-repeat;
+}
+
+.zgrid_btn.clean:active {
+	background: url('../images/clean-button.png') -32px 0
+		no-repeat;
+}
+
+.zgrid_btn.settings {
+	background: url('../images/component-settings-button-all.png') 0 0 no-repeat;
+}
+
+.zgrid_btn.settings:hover {
+	background: url('../images/component-settings-button-all.png') -64px 0
+		no-repeat;
+}
+
+.zgrid_btn.settings:active {
+	background: url('../images/component-settings-button-all.png') -32px 0
+		no-repeat;
+}
+
+.zgrid_btn.restart {
+	background: url('../images/daemon-restart-button-all.png') 0 0 no-repeat;
+}
+
+.zgrid_btn.restart:hover {
+	background: url('../images/daemon-restart-button-all.png') -64px 0
+		no-repeat;
+}
+
+.zgrid_btn.restart:active {
+	background: url('../images/daemon-restart-button-all.png') -32px 0
+		no-repeat;
+}
+
+.zgrid_btn.export {
+	background: url('../images/export-button-all.png') 0 0 no-repeat;
+}
+
+.zgrid_btn.export:hover {
+	background: url('../images/export-button-all.png') -64px 0
+		no-repeat;
+}
+
+.zgrid_btn.export:active {
+	background: url('../images/export-button-all.png') -32px 0
+		no-repeat;
+}
+
+.zgrid_btn.force_remove {
+	background: url('../images/apps-delete-button-all.png') 0 0 no-repeat;
+}
+
+.zgrid_btn.force_remove:hover {
+	background: url('../images/apps-delete-button-all.png') -64px 0
+		no-repeat;
+}
+
+.zgrid_btn.force_remove:active {
+	background: url('../images/apps-delete-button-all.png') -32px 0
+		no-repeat;
+}
+
+.zgrid_btn.apply_changes {
+	background: url('../images/upload-button-all.png') 0 0 no-repeat;
+}
+
+.zgrid_btn.apply_changes:hover {
+	background: url('../images/upload-button-all.png') -64px 0
+		no-repeat;
+}
+
+.zgrid_btn.apply_changes:active {
+	background: url('../images/upload-button-all.png') -32px 0
+		no-repeat;
+}
+
+.zgrid_btn.revert_changes {
+	background: url('../images/apps-redeploy-button-all.png') 0 0 no-repeat;
+}
+
+.zgrid_btn.revert_changes:hover {
+	background: url('../images/apps-redeploy-button-all.png') -64px 0
+		no-repeat;
+}
+
+.zgrid_btn.revert_changes:active {
+	background: url('../images/apps-redeploy-button-all.png') -32px 0
+		no-repeat;
+}
+
+.zgrid_btn.disable {
+	background: url('../images/disable-server-button-all.png') 0 0 no-repeat;
+}
+
+.zgrid_btn.disable:hover {
+	background: url('../images/disable-server-button-all.png') -64px 0
+		no-repeat;
+}
+
+.zgrid_btn.disable:active {
+	background: url('../images/disable-server-button-all.png') -32px 0
+		no-repeat;
+}
+.zgrid_btn.disable.disabled {
+	display: none;
+}
+
+.zgrid_btn.enable {
+	background: url('../images/enable-server-button-all.png') 0 0 no-repeat;
+}
+
+.zgrid_btn.enable:hover {
+	background: url('../images/enable-server-button-all.png') -64px 0
+		no-repeat;
+}
+
+.zgrid_btn.enable:active {
+	background: url('../images/enable-server-button-all.png') -32px 0
+		no-repeat;
+}
+.zgrid_btn.enable.disabled {
+	display: none;
+}
+
+.zgrid_btn.edit {
+	background: url('../images/apps-edit-button-all.png') 0 0 no-repeat;
+}
+
+.zgrid_btn.edit:hover {
+	background: url('../images/apps-edit-button-all.png') -64px 0
+		no-repeat;
+}
+
+.zgrid_btn.edit:active {
+	background: url('../images/apps-edit-button-all.png') -32px 0
+		no-repeat;
+}
+
+.zgrid_btn.manage {
+	background: url('../images/add-new-button-all.png') 0 0 no-repeat;
+}
+
+.zgrid_btn.manage:hover {
+	background: url('../images/add-new-button-all.png') -64px 0
+		no-repeat;
+}
+
+.zgrid_btn.manage:active {
+	background: url('../images/add-new-button-all.png') -32px 0
+		no-repeat;
+}
+
+.zgrid_btn.unmanage {
+	background: url('../images/remove-new-button-all.png') 0 0 no-repeat;
+}
+
+.zgrid_btn.unmanage:hover {
+	background: url('../images/remove-new-button-all.png') -64px 0
+		no-repeat;
+}
+
+.zgrid_btn.unmanage:active {
+	background: url('../images/remove-new-button-all.png') -32px 0
+		no-repeat;
+}
+
+.zgrid_btn.rename {
+	background: url('../images/apps-edit-button-all.png') 0 0 no-repeat;
+}
+
+.zgrid_btn.rename:hover {
+	background: url('../images/apps-edit-button-all.png') -64px 0
+		no-repeat;
+}
+
+.zgrid_btn.rename:active {
+	background: url('../images/apps-edit-button-all.png') -32px 0
+		no-repeat;
+}
+
+.zgrid_btn.new_rule {
+	background: url('../images/new-rule-button-all.png') 0 0 no-repeat;
+}
+
+.zgrid_btn.new_rule:hover {
+	background: url('../images/new-rule-button-all.png') -64px 0
+		no-repeat;
+}
+
+.zgrid_btn.new_rule:active {
+	background: url('../images/new-rule-button-all.png') -32px 0
+		no-repeat;
+}
+
+.zgrid td input[type="checkbox"] {
+	margin-top: 10px;
+}
+
+ul.tabs {
+    margin: 0;
+    padding: 0;
+	margin-left:2px;
+}
+
+.tabs .tab {
+    display: inline-block;
+	text-align:center;
+    list-style: none;
+    background-color: #DCEBF3;
+    border-bottom: 2px #C6DEE8 solid;
+
+	border-left: 2px solid #C6DEE8;
+    border-right: 2px solid #C6DEE8;
+    border-top: 2px solid #C6DEE8;
+
+    -moz-border-radius: 2px 2px 0 0;
+    -webkit-border-radius: 2px 2px 0 0;
+    border-radius: 2px 2px 0 0;
+    
+    color: #528397;
+	cursor: pointer;
+
+	margin-right:-1px;
+	width:115px;
+}
+
+.more-details {
+	color: #355968;
+	font-weight: bold;
+	background: url('../images/apps-stats-arrow-over.png') right 2px no-repeat;
+	padding-right: 18px;
+}
+
+.tabs .active {
+    background-color: #f6fafc;
+    border-bottom-color: #f6fafc;
+}
+
+.content {
+    margin-top: -2px;
+    border: 2px #C6DEE8 solid;
+    background: #f6fafc;
+    padding: 6px 3px;
+	overflow: auto;
+}
+
+.content ul {
+	padding: 0 10px;
+}
+
+.tab-label{
+	width:120px;
+	font-weight:bold;
+	display:block;
+	color: #888;
+	float:left;
+	text-align: right;
+	padding-right: 10px;
+}
+
+.zgrid-total {
+	margin-top: 1px;
+	font-size: 11px;
+	float: left;
+	margin-right: 10px;
+}
+
+.zgrid_btn_off {
+	opacity: 0.4;
+}
+
+.zgrid_btn.disabled {
+	display: none;
+}
+
+.zgrid td.zgrid_td-disabled {
+	background-color: #e6e6e6 !important;
+	opacity: 0.3;
+}
+
+.zgrid th.zgrid_header-disabled {
+	color: #a6b0b5;
+}
+
+.zgrid td .zgrid_td_label-indented {
+	margin-left: 43px;
+}
+
+.zgrid-icon {
+	height: 16px;
+	width: 16px;
+	margin: 8px auto 0;
+}
+
+.zgrid-icon-ok {
+	background: url('../images/grid/grid-ok.png') top left no-repeat;
+	height: 16px;
+	width: 16px;
+	margin: 8px auto 0;
+}

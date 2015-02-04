@@ -1,0 +1,35 @@
+@CHARSET "UTF-8";
+
+.tag {
+	padding: 5px;
+	cursor: pointer;
+	padding: 1px 4px 2px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	background-color: #9AC4D8;
+	color: white;
+	white-space: nowrap;
+	display: inline-block;
+	margin: 5px 5px;
+}
+
+.tag.readonly {
+	background-color: white;
+	border: 1px solid #9AC4D8;
+	color: #0285C4;
+	cursor: default;
+}
+
+.tag.readonly:hover {
+	background-color: white;
+}
+
+.tag:hover {
+	background-color: #4CACDA;
+}
+
+
+.tag.remove:after{
+	content: ' x';
+}

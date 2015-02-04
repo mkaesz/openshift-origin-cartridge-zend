@@ -1,0 +1,25 @@
+#!/bin/bash -eu
+
+source $OPENSHIFT_CARTRIDGE_SDK_BASH
+
+case "$1" in
+    -v|--version)
+      version="$2"
+esac
+
+echo "$version" > ${OPENSHIFT_ZEND_DIR}env/OPENSHIFT_ZEND_VERSION
+
+# Set up directories required by Apache
+mkdir -p ${OPENSHIFT_ZEND_DIR}{logs,run,tmp,sessions}
+ln -s /usr/lib64/httpd/modules ${OPENSHIFT_ZEND_DIR}modules
+
+# Prevent pdo_oci8 extension from writing into the gear's root directory
+echo "${OPENSHIFT_ZEND_DIR}oracle" > ${OPENSHIFT_ZEND_DIR}env/ORACLE_BASE
+echo "${OPENSHIFT_ZEND_DIR}oracle" > ${OPENSHIFT_ZEND_DIR}env/ORACLE_HOME
+mkdir -p ${OPENSHIFT_ZEND_DIR}oracle
+
+# Create a writable directory for Drush settings
+mkdir -p ${OPENSHIFT_HOMEDIR}.drush
+
+# Call the version specific install script
+exec ${OPENSHIFT_ZEND_DIR}versions/$version/bin/install $version

@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="cache_settings">
+    <xs:annotation>
+      <xs:documentation>Zend Page Cache configuration file.</xs:documentation>
+    </xs:annotation>
+		<xs:complexType>
+			<xs:sequence> 
+				<xs:element ref="dont_cache" minOccurs="0" maxOccurs="1" />			
+				<xs:element ref="cache" minOccurs="0" maxOccurs="1" />			
+			</xs:sequence> 
+		</xs:complexType>
+	</xs:element>
+	 
+	<xs:element name="dont_cache">
+		<xs:annotation>
+			<xs:documentation>List of all URL that are not to be cached</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="url" minOccurs="0" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:attribute name="path" use="required" >
+							<xs:simpleType>
+								<xs:restriction base="xs:string" />								
+							</xs:simpleType>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>						
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="cache">
+		<xs:annotation>
+			<xs:documentation></xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="url" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="url">
+		<xs:annotation>
+			<xs:documentation></xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="name" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="description" minOccurs="0" maxOccurs="1"/>
+				<xs:element ref="conditions_OR_block" minOccurs="0" maxOccurs="1" />
+				<xs:element ref="split_by" minOccurs="0" maxOccurs="1" />
+			</xs:sequence>
+			<xs:attribute name="lifetime" use="required" type="xs:positiveInteger" />
+			<xs:attribute name="match_type" use="required" >
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="exact"></xs:enumeration>
+						<xs:enumeration value="regex_match"></xs:enumeration>
+						<xs:enumeration value="regex_match_i"></xs:enumeration>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="schema" use="required" >
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="http"></xs:enumeration>
+						<xs:enumeration value="https"></xs:enumeration>
+						<xs:enumeration value="https?"></xs:enumeration>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="host" type="xs:string" use="required" />
+			<xs:attribute name="path" type="xs:string" use="required" />
+			<xs:attribute name="compress" type="xs:boolean" use="required" />
+			<xs:attribute name="name" type="xs:string" use="optional" />
+			<xs:attribute name="id" type="xs:string" use="required" />
+			<xs:attribute name="app_id" type="xs:string" use="optional" />
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="conditions_OR_block">
+		<xs:annotation>
+			<xs:documentation></xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="conditions_AND_block" minOccurs="1" maxOccurs="unbounded" />				
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="conditions_AND_block">
+		<xs:annotation>
+			<xs:documentation></xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="condition" minOccurs="0" maxOccurs="unbounded" />				
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="condition">
+		<xs:annotation>
+			<xs:documentation></xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attribute name="global" use="required" >
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:pattern value="(_GET|_POST|_COOKIE|_SESSION|_SERVER)(\[.+\])*"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="value" use="optional" >
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>		
+			<xs:attribute name="type" use="required" >
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="equals"></xs:enumeration>
+						<xs:enumeration value="not_equals"></xs:enumeration>
+						<xs:enumeration value="regex_match"></xs:enumeration>
+						<xs:enumeration value="regex_match_i"></xs:enumeration>
+						<xs:enumeration value="regex_not_match"></xs:enumeration>
+						<xs:enumeration value="regex_not_match_i"></xs:enumeration>
+						<xs:enumeration value="exists"></xs:enumeration>
+						<xs:enumeration value="not_exists"></xs:enumeration>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>		
+		</xs:complexType>				
+	</xs:element>	
+	
+	<xs:element name="split_by">
+		<xs:annotation>
+			<xs:documentation></xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="split_condition" minOccurs="1" maxOccurs="unbounded" />				
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>	
+	
+	<xs:element name="split_condition">
+		<xs:annotation>
+			<xs:documentation></xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attribute name="global" use="required" >
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:pattern value="(_GET|_POST|_COOKIE|_SESSION|_SERVER)(\[.+\])*"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="var" use="optional" >
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:pattern value="(\[.+\])*"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>			
+		</xs:complexType>
+	</xs:element>	
+</xs:schema>
+	
+	
+		  
+		  

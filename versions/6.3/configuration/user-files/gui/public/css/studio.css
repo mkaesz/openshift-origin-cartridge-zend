@@ -1,0 +1,103 @@
+@CHARSET "UTF-8";
+
+#main-container form {
+	width: 700px;
+}
+
+.hosts_list {
+	margin-top: 10px;
+	margin-bottom: 6px;
+}
+
+.hosts_list-controls {
+	margin-left: 4px;
+}
+.hosts_list-controls select {
+	margin-left: 6px;
+	margin-right: 3px;
+}
+.hosts_list-controls .hosts_list-controls-ipwidget:after {
+	content: ' /';
+}
+.hosts_list-controls .hosts_list-controls-ipwidget {
+	float: left;
+}
+
+#studio-ip_address-wrapper > div {
+	height: 24px;
+}
+
+#studio-auto_detect_browser-wrapper {
+	margin-left: 30px;
+}
+#studio-auto_detect_browser-wrapper label {
+	padding-top: 2px;
+}
+#studio-auto_detect_browser-wrapper input, #studio-auto_detect_browser-wrapper label {
+	vertical-align: middle;
+	line-height: 24px;
+	margin: 0 2px 0 2px;
+}
+
+#studio_integration-manual .toast {
+	position: inherit;
+	box-shadow: 0 0 0;
+	padding-right: 6px;
+	margin-bottom: 2px;
+	padding-top: 9px;
+	background-position: 7px 7px;
+}
+
+.inline-message {
+	padding-left: 25px;
+	margin-top: 7px;
+	font-style: italic;
+	background: url('../images/apps-status-warning.png') left 2px no-repeat;	
+}
+
+#studio-debug_port-wrapper input {
+	width: 144px;
+}
+
+#studio-auto_detect_browser-wrapper input {
+	float: left;
+	margin-top: 5px;
+}
+
+#studio-ip_address-wrapper {
+	height: 22px;
+}
+
+#studio-ip_address-wrapper label, #studio-debug_port-wrapper label {
+    display: block;
+    float: left;
+    line-height: 24px;
+    width: 171px;
+}
+#studio_integration-manual {
+	margin: 10px;
+}
+
+#studio_integration-automatic {
+	height: 24px;
+}
+
+#studio_integration-automatic input {
+	float: left;
+	margin-top: 4px;
+}
+#studio_integration-automatic label {
+	display: block;
+    float: left;
+    line-height: 24px;
+	margin-left: 6px;
+}
+
+#studio-debug_ssl-wrapper input {
+	line-height: 22px;
+}
+
+#studio-debug_ssl-wrapper label {
+	margin-left: 8px;
+	line-height: 22px;
+}

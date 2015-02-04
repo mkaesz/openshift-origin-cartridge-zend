@@ -1,0 +1,49 @@
+@CHARSET "UTF-8";
+
+#addserverform div.message-box {
+	margin-right: 15px;
+	margin-left: 15px;
+}
+
+#join-cluster-form table {
+	margin-bottom: 8px;
+}
+
+.limitedMessage {
+	padding: 10px;
+}
+
+#restart-php-btn {
+	margin-top: 5px;
+}
+
+#grid-action-bar h2 {
+	line-height: 23px;
+	height: 21px !important; 
+}
+
+.default-server-message {
+	margin-bottom: 10px;
+}
+
+.simple-modal-body {
+	height: 437px;
+	width: 415px;
+}
+
+.floating-tip input.rename-field {
+	width:230px;
+}
+
+.default-server-message-container {
+	white-space:normal !important;
+	text-align:left !important;
+}
+
+.clusterModeLabel {
+	color: #68757c;
+}
+
+.wizard {
+	height: 345px;
+}

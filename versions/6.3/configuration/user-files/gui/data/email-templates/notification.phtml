@@ -1,0 +1,69 @@
+<?php $this->emailSubject(_t('%s', array($title))) ?>
+<table align="left" bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" width="686">
+<tbody>
+<tr>
+  <td width="686" align="left" valign="top" bgcolor="#ffffff"><img src="http://static.zend.com/topics/ZS6-users-assistance-Notification-Center-top-banner-687x50px-02.png" alt="Zend Server 6 Notification Center" width="687" height="50" border="0"></td>
+  </tr>
+<tr>
+  <td align="left" valign="top" bgcolor="#ffffff" style="font-size: 12px; color: rgb(57, 72, 82); line-height: 150%; font-family: Arial,sans-serif; padding-left: 10px; padding-top: 10px;">
+    <p><strong style="font-size: 20px; color: rgb(0, 143, 213); line-height: 100%; font-family: Trebuchet MS; letter-spacing:0px;"><?php echo $title; ?></strong></p>
+    <table width="659" border="0" cellspacing="0" cellpadding="0" style="border:1px solid #b6c2c8;">
+      <tr>
+        <td width="41" valign="top" align="center" style="padding-top:10px;"><img src="http://static.zend.com/topics/error-message-icon-18x16px.png" width="18" height="16" border="0"></td>
+        <td width="618" style="padding:10px;"><strong>The Zend Server Notification Center has received a new notification: <?php echo $title; ?></strong><br>
+          <?php echo $description; ?>.</td>
+      </tr>
+    </table>
+    <?php if (! empty($url)) : ?>
+    <p><a href="<?php echo $url; ?>"><img src="http://static.zend.com/topics/Notification-Start-troubleshooting-button-195x27px.png" width="161" height="27" border="0" alt="Start troubleshooting"></a></p>
+    <?php endif; ?>
+    <p><a href="<?php echo $this->helpLink('notification_center'); ?>">
+    	<img src="http://static.zend.com/topics/help-icon-16x16px.png" alt="Learn more about monitoring rules" border="0" style="margin-right: 5px;">
+    	Learn more about the Notification Center</a></p>
+    <tr>
+    </tr>
+    
+    <?php if ($notifications->count() > 1) : ?>
+	<p style="margin-top: 10px;"><strong style="color: rgb(0, 143, 213);">Open Notifications:</strong>
+    <TABLE border=0 cellSpacing=0 cellPadding=0 >
+      <TBODY>
+        <TR>
+          <TD width="370" >
+          <TABLE width="309" border=0 cellPadding=0 cellSpacing=0>
+            <TBODY>
+             
+			<?php foreach ($notifications as $notification) : ?>
+			<?php $notificationTitle = $notification->getTitle(); ?>
+			<?php if ($notificationTitle != $title) : ?>
+			<?php
+				$notificationUrl = $notification->getUrl();
+				$notificationContent = '';
+				if (empty($notificationUrl)) {
+					$notificationContent = $notificationTitle;
+				} else {
+					$notificationActionUrl = $baseUrl . $notificationUrl;
+					$notificationContent = '<a href="' . $notificationActionUrl . '">' . $notificationTitle . '</a>';
+				}
+			?>
+			<TR>
+                <TD width="4" valign="top"><SPAN style="color: rgb(0, 143, 213); FONT-SIZE: 12px">•</SPAN></TD>
+                <TD width=6>&nbsp;</TD>
+                <TD width="299" style="LINE-HEIGHT: 150%; FONT-FAMILY: Arial, Helvetica, sans-serif; COLOR: #394852; FONT-SIZE: 12px; padding-bottom:5px"><?php echo $notificationContent; ?></TD>
+            </TR>
+            <?php endif; ?>
+			<?php endforeach; ?>
+			
+		</TBODY>
+          </TABLE></TD>
+        </TR>
+      </TBODY>
+    </TABLE></p>
+	<?php endif; ?>
+            
+    </td>
+  </tr>
+  <tr>
+  	<td align="left" valign="top" bgcolor="#ffffff" style="font-size: 10px; color: rgb(57, 72, 82); line-height: 12px; font-family: Arial,sans-serif; padding: 30px 10px 10px 10px;">
+  	<a href="<?php echo $baseUrl . '/Settings#notification-center-settings'; ?>">Click here</a> 
+  	to stop receiving emails from the Notification Center
+  	</td>

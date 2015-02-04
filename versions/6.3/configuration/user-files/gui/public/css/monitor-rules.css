@@ -1,0 +1,81 @@
+@CHARSET "UTF-8";
+
+.event_tracing_mode span {
+	line-height: 20px;
+	
+}
+.event_tracing_mode .change {
+	margin-left: 5px;
+	border-left: 1px solid black;
+	padding-left: 7px;
+}
+
+.event_tracing_mode label {
+	font-weight: bold;
+}
+
+#event_tracing_mode-box {
+	width: 280px;
+}
+
+.trigger-severity-icon {
+	display: inline-block;
+	margin-right: 10px;
+}
+
+.threshold-wrapper span, .threshold-wrapper div {
+	vertical-align: middle;
+	margin-top: 11px;
+}
+
+.threshold-wrapper div.triggers-count {
+	margin-top: 0px;
+	margin-right: 10px;
+	margin-left: 10px;
+}
+
+.triggers-tooltip-content ul li {
+	margin-top: 4px;
+	clear: both;
+}
+
+.tooltip {
+	display: none;
+}
+
+.triggers-tooltip-content {
+	width: 140px;
+	/* border: 1px solid black; */
+	background-color: white;
+	padding: 6px;
+	/* margin-left: 25px; */
+}
+
+.triggers-tooltip-content .tooltip {
+	border: 0;
+}
+
+.triggers-tooltip-content h4 {
+	margin-bottom: 10px;
+}
+
+#rule_conditions_container input {
+	width:100%;
+}
+#rule_conditions_container {
+	padding-right: 30px;
+}
+
+.zgrid .trigger-severity-icon {
+	margin-top: 0px;
+	margin-right: 3px;
+}
+
+#tableRow_Global .zgrid_ellipsis {
+	padding-left: 24px;
+}
+
+#event_tracing_mode-indicator {
+	cursor: pointer;
+	margin-right: 83px;
+}
