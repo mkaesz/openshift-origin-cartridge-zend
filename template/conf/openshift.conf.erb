@@ -1,3 +1,6 @@
+ServerRoot "<%= ENV['OPENSHIFT_ZEND_DIR'] %>"
+DocumentRoot "<%= ENV['OPENSHIFT_HOMEDIR'] %>app-root/runtime/repo/php"
+
 Listen <%= ENV['OPENSHIFT_ZEND_IP'] %>:8080
 User <%= ENV['OPENSHIFT_GEAR_UUID'] %>
 Group <%= ENV['OPENSHIFT_GEAR_UUID'] %>
