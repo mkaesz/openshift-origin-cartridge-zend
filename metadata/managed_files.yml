@@ -1,7 +1,6 @@
 ---
 locked_files:
 - ~/.pearrc
-- configuration/etc/conf.d/zendserver_php.conf
 - configuration/etc/conf.d/zendserver_console.conf*
 - configuration/etc/conf.d/zendserver_engine_vhost.conf*
 - configuration/etc/conf.d/zendserver_gui_vhost.disabled*
