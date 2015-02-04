@@ -12,7 +12,6 @@ echo "$version" > ${OPENSHIFT_ZEND_DIR}env/OPENSHIFT_ZEND_VERSION
 # Set up directories required by Apache
 mkdir -p ${OPENSHIFT_ZEND_DIR}{logs,run,tmp,sessions}
 ln -s /usr/lib64/httpd/modules ${OPENSHIFT_ZEND_DIR}modules
-# ln -s /etc/httpd/conf/magic ${OPENSHIFT_ZEND_DIR}conf/magic
 
 # Prevent pdo_oci8 extension from writing into the gear's root directory
 echo "${OPENSHIFT_ZEND_DIR}oracle" > ${OPENSHIFT_ZEND_DIR}env/ORACLE_BASE
