@@ -38,7 +38,7 @@ Subscribes:
     Required: false
 Scaling:
   Min: 1
-  Max: 1
+  Max: -1
 Version-Overrides:
   '6.3':
     Display-Name: PHP 5.5 with Zend Server 6.3
@@ -50,6 +50,8 @@ Version-Overrides:
       Private-Port-Name: PORT
       Private-Port: 8080
       Public-Port-Name: PROXY_PORT
+      Options:
+        primary: true
       Mappings:
       - Frontend: ''
         Backend: ''
@@ -70,6 +72,3 @@ Version-Overrides:
     - Private-IP-Name: IP
       Private-Port-Name: ZENDSERVER_PORT
       Private-Port: 16083
-    - Private-IP-Name: IP
-      Private-Port-Name: JAVABRIDGE_PORT
-      Private-Port: 10001
